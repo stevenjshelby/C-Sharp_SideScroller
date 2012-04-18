@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>HUDFont.spritefont</Source>
+      <Name>HUDFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\HUDFont.xnb</Output>
+      <Time>2012-04-18T14:59:20.0483784-07:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\ground.png</Source>
+      <Name>objects\ground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\objects\ground.xnb</Output>
+      <Time>2012-04-18T15:38:27.1836269-07:00</Time>
+    </Item>
+    <Item>
+      <Source>characters\enemy.png</Source>
+      <Name>characters\enemy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\characters\enemy.xnb</Output>
+      <Time>2012-04-18T15:29:24.0535616-07:00</Time>
+    </Item>
+    <Item>
+      <Source>characters\player.png</Source>
+      <Name>characters\player</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\characters\player.xnb</Output>
+      <Time>2012-04-18T15:29:24.0545617-07:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\block.png</Source>
+      <Name>objects\block</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\objects\block.xnb</Output>
+      <Time>2012-04-18T15:36:09.0247247-07:00</Time>
+    </Item>
+    <Item>
+      <Source>bg.png</Source>
+      <Name>bg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\bg.xnb</Output>
+      <Time>2012-04-18T15:54:54.8701193-07:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\borderblock.png</Source>
+      <Name>objects\borderblock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\objects\borderblock.xnb</Output>
+      <Time>2012-04-19T03:41:24.0516428-07:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\TestingContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\TestingContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-04-08T17:25:08.1058963-07:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

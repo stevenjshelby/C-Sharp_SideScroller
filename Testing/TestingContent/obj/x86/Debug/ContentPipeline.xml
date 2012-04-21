@@ -20,24 +20,6 @@
       <Time>2012-04-18T15:38:27.1836269-07:00</Time>
     </Item>
     <Item>
-      <Source>characters\enemy.png</Source>
-      <Name>characters\enemy</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\characters\enemy.xnb</Output>
-      <Time>2012-04-18T15:29:24.0535616-07:00</Time>
-    </Item>
-    <Item>
-      <Source>characters\player.png</Source>
-      <Name>characters\player</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\characters\player.xnb</Output>
-      <Time>2012-04-18T15:29:24.0545617-07:00</Time>
-    </Item>
-    <Item>
       <Source>objects\block.png</Source>
       <Name>objects\block</Name>
       <Importer>TextureImporter</Importer>
@@ -53,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\bg.xnb</Output>
-      <Time>2012-04-18T15:54:54.8701193-07:00</Time>
+      <Time>2012-04-20T17:07:20.5345464-07:00</Time>
     </Item>
     <Item>
       <Source>objects\borderblock.png</Source>
@@ -63,6 +45,33 @@
       <Options>None</Options>
       <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\objects\borderblock.xnb</Output>
       <Time>2012-04-19T03:41:24.0516428-07:00</Time>
+    </Item>
+    <Item>
+      <Source>chars\enemy.png</Source>
+      <Name>chars\enemy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\chars\enemy.xnb</Output>
+      <Time>2012-04-20T16:18:46.0798491-07:00</Time>
+    </Item>
+    <Item>
+      <Source>chars\player.png</Source>
+      <Name>chars\player</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\chars\player.xnb</Output>
+      <Time>2012-04-20T16:18:46.0808491-07:00</Time>
+    </Item>
+    <Item>
+      <Source>chars\playerline.png</Source>
+      <Name>chars\playerline</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\chars\playerline.xnb</Output>
+      <Time>2012-04-20T16:37:09.6679707-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

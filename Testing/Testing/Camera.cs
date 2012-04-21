@@ -58,6 +58,7 @@ namespace Testing
         public bool Visible(GameObject gobj)
         {
             return boundingRect.Intersects(gobj.SpriteBounds);
+
         }
     }
 }

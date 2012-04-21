@@ -26,10 +26,10 @@ namespace Testing
 
         public override void Update(Level currentLevel)
         {
-            if (alive)
-            {
-                Move(MovementDirection, 0.1f);
-            }
+            if (!alive)
+                return;
+            
+            Move(MovementDirection, 0.1f);
             base.Update(currentLevel);
         }
 
@@ -45,7 +45,7 @@ namespace Testing
                 return;
 
             //collision with enemy detected
-            if (Position.Y > mob.Position.Y)
+            if (Position.Y > mob.Position.Y+mob.Height)
             {
                 //enemy is above, cant kill
                 return;

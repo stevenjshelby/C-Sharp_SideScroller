@@ -24,7 +24,6 @@ namespace Testing
             Left,
             Right
         }
-        public bool alive;
 
         //Properties
 
@@ -38,35 +37,33 @@ namespace Testing
         //Methods
         public override void Update(Level currentLevel)
         {
-            if (alive)
-            {
-                Vector2 lastPosition = Position;
-                if (velocity.Y > 0)
-                    Position += new Vector2(velocity.X, 0);
-                else
-                    Position += velocity;
-                velocity.X *= 0.75f;
-                if (velocity.Y < 0)
-                    velocity.Y *= 0.90f;
+            if (!alive)
+                return;
 
-                if (IntersectsWithAny(currentLevel.GameObjects) != null)
-                {
-                    Position = lastPosition;
-                    velocity = new Vector2(0, velocity.Y);
-                    HitWall();
-                }
-                ApplyGravity(currentLevel);
-                if (Position.Y > Game1.ScreenHeight + 200)
-                {
-                    //below visible screen
-                    Die();
-                }
-            }
+            Vector2 lastPosition = Position;
+            if (velocity.Y > 0)
+                Position += new Vector2(velocity.X, 0);
             else
-            {
-                if (Position.Y < -5000)
-                    velocity = Vector2.Zero;
                 Position += velocity;
+            velocity.X *= 0.75f;
+            if (velocity.Y < 0)
+                velocity.Y *= 0.90f;
+
+            var gobj = IntersectsWithAny(currentLevel.GameObjects);
+
+            if (gobj != null)
+            {
+                Position = lastPosition;
+                velocity = new Vector2(0, velocity.Y);
+                HitWall();
+            }
+
+            ApplyGravity(currentLevel);
+
+            if (Position.Y > Game1.ScreenHeight)
+            {
+                //below visible screen
+                Die();
             }
         }
 
@@ -114,17 +111,16 @@ namespace Testing
 
         public void Die()
         {
-            if (alive)
-            {
-                alive = false;
-                velocity = new Vector2(0, -10f);
-            }
+            alive = false;
+            velocity = Vector2.Zero;
+            Position = new Vector2(0, 0);
         }
 
         public override GameObject IntersectsWithAny(List<GameObject> gameObjects)
         {
             if (!alive)
                 return null;
+
             foreach (GameObject gobj in gameObjects)
             {
                 if (gobj == this)
@@ -147,6 +143,7 @@ namespace Testing
                     }
                 }
             }
+
             return null;
         }
 

@@ -28,6 +28,7 @@ namespace Testing
         public Texture2D sprite;
         public Rectangle SpriteBounds;
         public ObjectType Type;
+        public bool alive = true;
 
         //Properties
         public Vector2 Position
@@ -66,9 +67,9 @@ namespace Testing
         {
             if (SpriteBounds.Intersects(o.SpriteBounds))
             {
-                if (PixelsIntersect(SpriteBounds, 
+                if (PixelsIntersect(SpriteBounds,
                                     TextureToArray(sprite),
-                                    o.SpriteBounds, 
+                                    o.SpriteBounds,
                                     TextureToArray(o.sprite)))
                     return true;
             }

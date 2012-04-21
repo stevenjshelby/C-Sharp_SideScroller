@@ -38,9 +38,11 @@ namespace Testing
 
         //the screen will be 27 tiles wide and 15 tiles high
         private static int screenWidth = 864;
-        private static int screenHeight = 480;
+        private static int screenHeight = 600;
+        private static int hudHeight = 120;
         public static int ScreenWidth { get { return screenWidth; } }
         public static int ScreenHeight { get { return screenHeight; } }
+        public static int HUDHeight { get { return hudHeight; } }
 
         public Game1()
         {
@@ -124,7 +126,7 @@ namespace Testing
         protected override void Initialize()
         {
             //initialize camera to screen size
-            camera = new Camera(0,0,screenWidth, screenHeight);
+            camera = new Camera(0,0,screenWidth, screenHeight-hudHeight);
 
             base.Initialize();
         }
@@ -138,10 +140,10 @@ namespace Testing
 
             backgroundTexture = Content.Load<Texture2D>("bg");
 
-            enemyTexture = Content.Load<Texture2D>("characters/enemy");
+            enemyTexture = Content.Load<Texture2D>("chars/enemy");
             enemyTexture.Name = "enemy";
 
-            playerTexture = Content.Load<Texture2D>("characters/player");
+            playerTexture = Content.Load<Texture2D>("chars/playerline");
             playerTexture.Name = "player";
 
             availableLevels = FindAvailableLevels();
@@ -230,7 +232,7 @@ namespace Testing
                 spriteBatch.Draw(backgroundTexture, Vector2.Zero, Color.White);
                 foreach (GameObject gobj in currentLevel.GameObjects)
                 {
-                    if (camera.Visible(gobj))
+                    if (camera.Visible(gobj) && gobj.alive)
                     {
                         Vector2 actualPosition = gobj.Position - camera.Position;
                         spriteBatch.Draw(gobj.sprite, actualPosition, Color.White);
@@ -250,10 +252,10 @@ namespace Testing
                     spriteBatch.DrawString(spriteFont, text, screenCenter - textSize / 2, Color.Black);
                 }
                 //draw score
-                string scoreString = "BANANANANANA";
-                Vector2 scoreTextSize = spriteFont.MeasureString(scoreString);
+                string debugposition = "X= " + player.Position.X.ToString() + ", Y=" + player.Position.Y.ToString();
+                Vector2 scoreTextSize = spriteFont.MeasureString(debugposition);
                 Vector2 scorePosition = new Vector2(GraphicsDevice.Viewport.Width, 50) - scoreTextSize;
-                spriteBatch.DrawString(spriteFont, scoreString, scorePosition, Color.Black);
+                spriteBatch.DrawString(spriteFont, debugposition, scorePosition, Color.Black);
 
 
                 Vector2 startPosition = currentLevel.StartPosition - camera.Position;

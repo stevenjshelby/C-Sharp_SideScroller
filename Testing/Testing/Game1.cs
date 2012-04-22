@@ -44,11 +44,14 @@ namespace Testing
         public static int ScreenHeight { get { return screenHeight; } }
         public static Rectangle HUDRect { get { return HUD;} }
 
-        public static string infoText = "Crap";
+        public static string infoText = "";
         public Vector2 infoPosition = new Vector2(0, 0);
 
         public string scoreText = "";
         public Vector2 scorePos = new Vector2(0, 0);
+
+        public string playerName = "";
+        public Dictionary<string, int> highScores = new Dictionary<string, int>();
 
         public Game1()
         {
@@ -187,6 +190,47 @@ namespace Testing
             scorePos = new Vector2(HUDRect.X, HUDRect.Y+infoTextSize.Y);
         }
 
+        protected void updateHighScores()
+        {
+            loadHighScores();
+            // load high scores
+            foreach (KeyValuePair<string, int> pair in highScores) {
+                if (player.score > pair.Value)
+                {
+                    //prompt for player name
+                    highScores.Add(playerName, player.score);
+                    break;
+                }
+            }
+            // save high scores here
+            saveHighScores();
+        }
+
+        protected void loadHighScores()
+        {
+            string filename = "highscores.txt";
+            using (var sr = new StreamReader(filename))
+            {
+                while (!sr.EndOfStream)
+                {
+                    //reads a line
+                    string line = sr.ReadLine();
+                    if (line != null && (line.StartsWith("//") || line == ""))
+                        continue;
+                    if (line != null)
+                    {
+                        //load in lines
+
+                    }
+                }
+            }
+        }
+
+        protected void saveHighScores()
+        {
+
+        }
+
         private KeyboardState oldKeyboardState = Keyboard.GetState();
 
         protected override void Update(GameTime gameTime)
@@ -235,13 +279,16 @@ namespace Testing
                 {
                     currentLevel.Finished = true;
                     currentLevel.LevelFinishTime = DateTime.Now;
+
+                    //high score system
+                    updateHighScores();
                 }
             }
 
 
             //implement HUD update here
 
-            this.UpdateHUD();
+            UpdateHUD();
 
             camera.Update();
 

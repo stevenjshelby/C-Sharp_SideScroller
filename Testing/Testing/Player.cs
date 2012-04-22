@@ -44,16 +44,15 @@ namespace Testing
         public override void DetectEnemyHit(MovingObject mob)
         {
             //if collision with enemy
-            if (Position.Y + Height - 4 <= mob.Position.Y + 12)
+            if (Position.Y + Height - 4 <= mob.Position.Y + 16)
             {
                 //kill enemy if coming from above
                 if (velocity.Y > 0)
+                {
                     mob.Die();
                     score += 1;
-
-                //bounce off of enemy
-                canJump = true;
-                Jump();
+                    velocity.Y = Math.Min(-velocity.Y, -5);
+                }
             }
             else
             {
@@ -100,6 +99,10 @@ namespace Testing
                     if (Position.Y < gobj.Position.Y)
                         canJump = true;
                 }
+            }
+            else 
+            {
+                canJump = false;
             }
 
             base.Update(currentLevel);

@@ -27,7 +27,7 @@ namespace Testing
         private Texture2D playerTexture;
         private Texture2D enemyTexture;
         private SpriteFont spriteFont;
-        private Rectangle strartRect;
+        private Rectangle startRect;
         private Rectangle FinishRect;
         private Level currentLevel;
         private Player player;
@@ -44,13 +44,22 @@ namespace Testing
         public static int ScreenHeight { get { return screenHeight; } }
         public static Rectangle HUDRect { get { return HUD;} }
 
+        public static string infoText = "Crap";
+        public Vector2 infoPosition = new Vector2(0, 0);
+
+        public string scoreText = "";
+        public Vector2 scorePos = new Vector2(0, 0);
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
 
+            //HUD rectangle creation
             HUD = new Rectangle(0, 480, screenWidth, 120);
+
+            infoPosition = new Vector2(HUD.X, HUD.Y);
 
             Content.RootDirectory = "Content";
         }
@@ -169,6 +178,15 @@ namespace Testing
             // TODO: Unload any non ContentManager content here
         }
 
+        protected void UpdateHUD() {
+            infoText = "X= " + player.Position.X.ToString() + ", Y=" + player.Position.Y.ToString();
+            scoreText = "Score: " + player.score;
+
+            // calculate positions for crap
+            Vector2 infoTextSize = spriteFont.MeasureString(infoText);
+            scorePos = new Vector2(HUDRect.X, HUDRect.Y+infoTextSize.Y);
+        }
+
         private KeyboardState oldKeyboardState = Keyboard.GetState();
 
         protected override void Update(GameTime gameTime)
@@ -220,6 +238,11 @@ namespace Testing
                 }
             }
 
+
+            //implement HUD update here
+
+            this.UpdateHUD();
+
             camera.Update();
 
             oldKeyboardState = keyboard;
@@ -254,18 +277,17 @@ namespace Testing
                     Vector2 textSize = spriteFont.MeasureString(text);
                     spriteBatch.DrawString(spriteFont, text, screenCenter - textSize / 2, Color.Black);
                 }
-                //draw score
-                string pos = "X= " + player.Position.X.ToString() + ", Y=" + player.Position.Y.ToString();
-                Vector2 scoreTextSize = spriteFont.MeasureString(pos);
-                Vector2 scorePosition = new Vector2(HUDRect.X, HUDRect.Y);
-                spriteBatch.DrawString(spriteFont, pos, scorePosition, Color.White);
+                
+                //draw HUD
+                spriteBatch.DrawString(spriteFont, infoText, infoPosition, Color.White);
+                spriteBatch.DrawString(spriteFont, scoreText, scorePos, Color.White);
 
 
                 Vector2 startPosition = currentLevel.StartPosition - camera.Position;
                 Vector2 finishPosition = currentLevel.FinishPosition - camera.Position;
-            spriteBatch.End();
+                spriteBatch.End();
 
-            base.Draw(gameTime);
+                base.Draw(gameTime);
         }
     }
 }

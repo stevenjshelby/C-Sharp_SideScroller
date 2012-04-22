@@ -17,6 +17,7 @@ namespace Testing
     {
         //Variables
         private bool canJump = true;
+        public int score = 0;
 
         //Constructors
         public Player(Vector2 position, Vector2 velocity, Texture2D sprite)
@@ -48,6 +49,7 @@ namespace Testing
                 //kill enemy if coming from above
                 if (velocity.Y > 0)
                     mob.Die();
+                    score += 1;
 
                 //bounce off of enemy
                 canJump = true;

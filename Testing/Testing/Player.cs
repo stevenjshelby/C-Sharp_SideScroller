@@ -101,14 +101,8 @@ namespace Testing
                         canJump = true;
                 }
             }
-            
-            ApplyGravity(currentLevel);
 
-            if (Position.Y > Game1.ScreenHeight)
-            {
-                //below visible screen
-                Die();
-            }
+            base.Update(currentLevel);
         }
     }
 }

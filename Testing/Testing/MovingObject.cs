@@ -119,5 +119,16 @@ namespace Testing
         public virtual void DetectEnemyHit(MovingObject mob)
         {
         }
+
+        public override void Update(Level currentLevel)
+        {
+            ApplyGravity(currentLevel);
+
+            if (Position.Y > Game1.ScreenHeight)
+            {
+                //below visible screen
+                Die();
+            }
+        }
     }
 }

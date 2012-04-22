@@ -48,13 +48,7 @@ namespace Testing
                 HitWall();
             }
 
-            ApplyGravity(currentLevel);
-
-            if (Position.Y > Game1.ScreenHeight)
-            {
-                //below visible screen
-                Die();
-            }
+            base.Update(currentLevel);
         }
 
         public override void HitWall()

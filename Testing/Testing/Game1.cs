@@ -53,7 +53,6 @@ namespace Testing
         public string playerName = "";
         public Dictionary<string, int> highScores = new Dictionary<string, int>();
 
-        private bool InMenu = true;
         private Texture2D MenuArt;
         private Texture2D MenuBG;
         public enum GameState
@@ -61,7 +60,8 @@ namespace Testing
             Menu,
             Loading,
             Game,
-            Options
+            Options,
+            Paused
         }
         public GameState gameState;
         private int loadTimer = 0;
@@ -257,67 +257,82 @@ namespace Testing
         {
             KeyboardState keyboard = Keyboard.GetState();
 
-            if (gameState == GameState.Menu && keyboard.IsKeyDown(Keys.Enter))
-            {
-                gameState = GameState.Loading;
-            }
-            else if (gameState != GameState.Game)
-            {
-                return;
-            }
-
             // Allows the game to exit
             if (keyboard.IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            if (keyboard.IsKeyDown(Keys.R) && oldKeyboardState.IsKeyUp(Keys.R))
+            //Pause Game
+            if (keyboard.IsKeyDown(Keys.P) && oldKeyboardState.IsKeyUp(Keys.P))
             {
-                LoadLevel(currentLevel.Name);
-                return;
+                if (gameState == GameState.Paused)
+                    gameState = GameState.Game;
+                else
+                    gameState = GameState.Paused;
             }
 
-            if (keyboard.IsKeyDown(Keys.A))
+            if (gameState == GameState.Menu && keyboard.IsKeyDown(Keys.Enter))
             {
-                player.Move(MovingObject.Direction.Left);
+                gameState = GameState.Loading;
             }
-            else if (keyboard.IsKeyDown(Keys.D))
+            else if (gameState == GameState.Menu && keyboard.IsKeyDown(Keys.O))
             {
-                player.Move(MovingObject.Direction.Right);
+                gameState = GameState.Options;
             }
+            else if (gameState == GameState.Game)
+            {
 
-            if (keyboard.IsKeyDown(Keys.Up) && oldKeyboardState.IsKeyUp(Keys.Up))
-            {
-                player.Jump();
-            }
-
-            foreach (GameObject gobj in currentLevel.GameObjects)
-            {
-                gobj.Update(currentLevel);
-            }
-
-            if (currentLevel.Finished)
-            {
-                if (DateTime.Now >= currentLevel.LevelFinishTime.AddSeconds(3))
+                //Reload current level
+                if (keyboard.IsKeyDown(Keys.R) && oldKeyboardState.IsKeyUp(Keys.R))
                 {
-                    gameState = GameState.Loading;
-                    NextLevel();
+                    LoadLevel(currentLevel.Name);
+                    return;
                 }
-            }
-            else
-            {
-                if (player.LevelComplete(currentLevel))
+
+                //Player movement
+                if (keyboard.IsKeyDown(Keys.A))
                 {
-                    currentLevel.Finished = true;
-                    currentLevel.LevelFinishTime = DateTime.Now;
-
-                    //high score system
-                    updateHighScores();
+                    player.Move(MovingObject.Direction.Left);
                 }
+                else if (keyboard.IsKeyDown(Keys.D))
+                {
+                    player.Move(MovingObject.Direction.Right);
+                }
+
+                //Player jump
+                if (keyboard.IsKeyDown(Keys.Up) && oldKeyboardState.IsKeyUp(Keys.Up))
+                {
+                    player.Jump();
+                }
+
+                foreach (GameObject gobj in currentLevel.GameObjects)
+                {
+                    gobj.Update(currentLevel);
+                }
+
+                if (currentLevel.Finished)
+                {
+                    if (DateTime.Now >= currentLevel.LevelFinishTime.AddSeconds(3))
+                    {
+                        gameState = GameState.Loading;
+                        NextLevel();
+                    }
+                }
+                else
+                {
+                    if (player.LevelComplete(currentLevel))
+                    {
+                        currentLevel.Finished = true;
+                        currentLevel.LevelFinishTime = DateTime.Now;
+
+                        //high score system
+                        updateHighScores();
+                    }
+                }
+
+                UpdateHUD();
+
+                camera.Update();
             }
-
-            UpdateHUD();
-
-            camera.Update();
 
             oldKeyboardState = keyboard;
 
@@ -331,25 +346,35 @@ namespace Testing
             if (gameState == GameState.Menu)
             {
                 spriteBatch.Begin();
-
                     spriteBatch.Draw(MenuBG, Vector2.Zero, Color.White);
                     spriteBatch.Draw(MenuArt, new Vector2(207, 115), Color.White);
-                    string start = "Press Enter";
-                    Vector2 stringlen = spriteFont.MeasureString(start);
+                    string str = "Press Enter";
+                    Vector2 stringlen = spriteFont.MeasureString(str);
                     Vector2 stringpos = new Vector2(ScreenWidth / 2 - stringlen.X / 2, 390);
-                    spriteBatch.DrawString(spriteFont, start, stringpos, Color.White);
+                    spriteBatch.DrawString(spriteFont, str, stringpos, Color.White);
+                    str = "o = options";
+                    stringlen = spriteFont.MeasureString(str);
+                    stringpos = new Vector2(0, screenHeight - (HUDRect.Height + stringlen.Y));
+                    spriteBatch.DrawString(spriteFont, str, stringpos, Color.White);
                 spriteBatch.End();
-
-                return;
             }
-            else if (gameState == GameState.Loading)
+            else if (gameState == GameState.Loading || gameState == GameState.Paused)
             {
-                DrawLevelLoading();
-
-                return;
+                DrawLevelSplash();
             }
-
-            spriteBatch.Begin();
+            else if (gameState == GameState.Options)
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(MenuBG, Vector2.Zero, Color.White);
+                string str = "This is the Options Menu";
+                Vector2 stringlen = spriteFont.MeasureString(str);
+                Vector2 stringpos = new Vector2(ScreenWidth / 2 - stringlen.X / 2, screenHeight / 2 - stringlen.Y);
+                spriteBatch.DrawString(spriteFont, str, stringpos, Color.White);
+                spriteBatch.End();
+            }
+            else
+            {
+                spriteBatch.Begin();
                 spriteBatch.Draw(backgroundTexture, Vector2.Zero, Color.White);
                 foreach (GameObject gobj in currentLevel.GameObjects)
                 {
@@ -358,11 +383,11 @@ namespace Testing
                         Vector2 actualPosition = gobj.Position - camera.Position;
                         spriteBatch.Draw(gobj.sprite, actualPosition, Color.White);
                     }
-                } 
+                }
                 Vector2 screenCenter = new Vector2(GraphicsDevice.Viewport.Width / 2, 100);
                 if (currentLevel.Finished)
                 {
-                    string text = ("You Beat Level " + (currentLevelIndex+1));
+                    string text = ("You Beat Level " + (currentLevelIndex + 1));
                     Vector2 textSize = spriteFont.MeasureString(text);
                     spriteBatch.DrawString(spriteFont, text, screenCenter - textSize / 2, Color.Black);
                 }
@@ -373,35 +398,61 @@ namespace Testing
                     spriteBatch.DrawString(spriteFont, text, screenCenter - textSize / 2, Color.Black);
                 }
 
-                //draw HUD
-                spriteBatch.DrawString(spriteFont, infoText, infoPosition, Color.White);
-                spriteBatch.DrawString(spriteFont, scoreText, scorePos, Color.White);
-
-
                 Vector2 startPosition = currentLevel.StartPosition - camera.Position;
                 Vector2 finishPosition = currentLevel.FinishPosition - camera.Position;
-            spriteBatch.End();
+                spriteBatch.End();
+            }
 
+            DrawHUD();
+            
             base.Draw(gameTime);
         }
 
-        private void DrawLevelLoading()
+        //draw HUD
+        private void DrawHUD()
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
             spriteBatch.Begin();
+                spriteBatch.DrawString(spriteFont, infoText, infoPosition, Color.White);
+                spriteBatch.DrawString(spriteFont, scoreText, scorePos, Color.White);
+            spriteBatch.End();
+        }
 
+        private void DrawLevelSplash()
+        {
+            spriteBatch.Begin();
+                spriteBatch.Draw(MenuBG, Vector2.Zero, Color.White);
                 string levtext = "Level " + (currentLevelIndex + 1);
                 Vector2 levsize = spriteFont.MeasureString(levtext);
                 spriteBatch.DrawString(spriteFont, levtext, new Vector2(screenWidth / 2 - levsize.X / 2, screenHeight / 2 - levsize.Y / 2), Color.White);
 
             spriteBatch.End();
 
-            loadTimer++;
-            if (loadTimer > loadTime)
+            if (gameState == GameState.Loading)
             {
-                loadTimer = 0;
-                gameState = GameState.Game;
+                loadTimer++;
+
+                if (loadTimer > loadTime)
+                {
+                    loadTimer = 0;
+                    gameState = GameState.Game;
+                }
+                spriteBatch.Begin();
+
+                    string str = "Loading...";
+                    Vector2 strlen = spriteFont.MeasureString(str);
+                    spriteBatch.DrawString(spriteFont, str, new Vector2(screenWidth / 2 - levsize.X / 2, screenHeight / 2 + levsize.Y / 2), Color.White);
+
+                spriteBatch.End();
+            }
+            else if (gameState == GameState.Paused)
+            {
+                spriteBatch.Begin();
+
+                    string str = "Paused";
+                    Vector2 strlen = spriteFont.MeasureString(str);
+                    spriteBatch.DrawString(spriteFont, str, new Vector2(screenWidth / 2 - levsize.X / 2, screenHeight / 2 + levsize.Y / 2), Color.White);
+
+                spriteBatch.End();
             }
         }
     }

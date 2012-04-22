@@ -50,7 +50,7 @@ namespace Testing
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
 
-            HUD = new Rectangle(0, 448, screenWidth, 120);
+            HUD = new Rectangle(0, 480, screenWidth, 120);
 
             Content.RootDirectory = "Content";
         }
@@ -255,15 +255,14 @@ namespace Testing
                     spriteBatch.DrawString(spriteFont, text, screenCenter - textSize / 2, Color.Black);
                 }
                 //draw score
-                string debugposition = "X= " + player.Position.X.ToString() + ", Y=" + player.Position.Y.ToString();
-                Vector2 scoreTextSize = spriteFont.MeasureString(debugposition);
-                Vector2 scorePosition = new Vector2(GraphicsDevice.Viewport.Width, 50) - scoreTextSize;
-                spriteBatch.DrawString(spriteFont, debugposition, scorePosition, Color.Black);
+                string pos = "X= " + player.Position.X.ToString() + ", Y=" + player.Position.Y.ToString();
+                Vector2 scoreTextSize = spriteFont.MeasureString(pos);
+                Vector2 scorePosition = new Vector2(HUDRect.X, HUDRect.Y);
+                spriteBatch.DrawString(spriteFont, pos, scorePosition, Color.White);
 
 
                 Vector2 startPosition = currentLevel.StartPosition - camera.Position;
                 Vector2 finishPosition = currentLevel.FinishPosition - camera.Position;
-                //spriteBatch.Draw(currentLevel.FinishZone.sprite, finishPosition, Color.White);
             spriteBatch.End();
 
             base.Draw(gameTime);

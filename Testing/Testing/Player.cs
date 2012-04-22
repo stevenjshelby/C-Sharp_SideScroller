@@ -91,8 +91,11 @@ namespace Testing
             if (IntersectsWithAny(currentLevel.GameObjects) != null)
             {
                 Position = lastPosition;
-                if (velocity.Y < 0)
+                if (!canJump)
+                {
                     velocity.Y = 0;
+                    canJump = true;
+                }
             }
             
             ApplyGravity(currentLevel);

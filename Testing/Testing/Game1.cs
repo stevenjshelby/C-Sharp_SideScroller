@@ -44,6 +44,20 @@ namespace Testing
         public static int ScreenHeight { get { return screenHeight; } }
         public static Rectangle HUDRect { get { return HUD;} }
 
+        private bool InMenu = true;
+        private Texture2D MenuArt;
+        private Texture2D MenuBG;
+        public enum GameState
+        {
+            Menu,
+            Loading,
+            Game,
+            Options
+        }
+        public GameState gameState;
+        private int loadTimer = 0;
+        private int loadTime = 70;
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -51,6 +65,7 @@ namespace Testing
             graphics.PreferredBackBufferHeight = screenHeight;
 
             HUD = new Rectangle(0, 480, screenWidth, 120);
+            gameState = GameState.Menu;
 
             Content.RootDirectory = "Content";
         }
@@ -61,6 +76,7 @@ namespace Testing
             foreach (string file in System.IO.Directory.GetFiles("Levels\\"))
             {
                 levels.Add(file);
+                System.Windows.Forms.MessageBox.Show(DateTime.Now.ToString());
             }
             levels.Sort();
             return levels;
@@ -149,6 +165,9 @@ namespace Testing
             playerTexture = Content.Load<Texture2D>("chars/player");
             playerTexture.Name = "player";
 
+            MenuArt = Content.Load<Texture2D>("titleplaceholder");
+            MenuBG = Content.Load<Texture2D>("menubg");
+
             availableLevels = FindAvailableLevels();
             NextLevel();
         }
@@ -174,6 +193,15 @@ namespace Testing
         protected override void Update(GameTime gameTime)
         {
             KeyboardState keyboard = Keyboard.GetState();
+
+            if (gameState == GameState.Menu && keyboard.IsKeyDown(Keys.Enter))
+            {
+                gameState = GameState.Loading;
+            }
+            else if (gameState != GameState.Game)
+            {
+                return;
+            }
 
             // Allows the game to exit
             if (keyboard.IsKeyDown(Keys.Escape))
@@ -208,6 +236,7 @@ namespace Testing
             {
                 if (DateTime.Now >= currentLevel.LevelFinishTime.AddSeconds(3))
                 {
+                    gameState = GameState.Loading;
                     NextLevel();
                 }
             }
@@ -231,6 +260,27 @@ namespace Testing
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            if (gameState == GameState.Menu)
+            {
+                spriteBatch.Begin();
+
+                    spriteBatch.Draw(MenuBG, Vector2.Zero, Color.White);
+                    spriteBatch.Draw(MenuArt, new Vector2(207, 115), Color.White);
+                    string start = "Press Enter";
+                    Vector2 stringlen = spriteFont.MeasureString(start);
+                    Vector2 stringpos = new Vector2(ScreenWidth / 2 - stringlen.X / 2, 390);
+                    spriteBatch.DrawString(spriteFont, start, stringpos, Color.White);
+                spriteBatch.End();
+
+                return;
+            }
+            else if (gameState == GameState.Loading)
+            {
+                DrawLevelLoading();
+
+                return;
+            }
+
             spriteBatch.Begin();
                 spriteBatch.Draw(backgroundTexture, Vector2.Zero, Color.White);
                 foreach (GameObject gobj in currentLevel.GameObjects)
@@ -244,13 +294,13 @@ namespace Testing
                 Vector2 screenCenter = new Vector2(GraphicsDevice.Viewport.Width / 2, 100);
                 if (currentLevel.Finished)
                 {
-                    const string text = "YOU WIN!";
+                    string text = ("You Beat Level " + (currentLevelIndex+1));
                     Vector2 textSize = spriteFont.MeasureString(text);
                     spriteBatch.DrawString(spriteFont, text, screenCenter - textSize / 2, Color.Black);
                 }
                 if (!player.alive)
                 {
-                    string text = "You died" + Environment.NewLine + "Press R to restart.";
+                    string text = "You died" + Environment.NewLine + "Press R to restart level.";
                     Vector2 textSize = spriteFont.MeasureString(text);
                     spriteBatch.DrawString(spriteFont, text, screenCenter - textSize / 2, Color.Black);
                 }
@@ -266,6 +316,26 @@ namespace Testing
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void DrawLevelLoading()
+        {
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            spriteBatch.Begin();
+
+                string levtext = "Level " + (currentLevelIndex + 1);
+                Vector2 levsize = spriteFont.MeasureString(levtext);
+                spriteBatch.DrawString(spriteFont, levtext, new Vector2(screenWidth / 2 - levsize.X / 2, screenHeight / 2 - levsize.Y / 2), Color.White);
+
+            spriteBatch.End();
+
+            loadTimer++;
+            if (loadTimer > loadTime)
+            {
+                loadTimer = 0;
+                gameState = GameState.Game;
+            }
         }
     }
 }

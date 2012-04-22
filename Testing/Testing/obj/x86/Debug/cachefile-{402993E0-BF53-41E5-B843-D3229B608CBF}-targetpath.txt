@@ -6,3 +6,5 @@ Content\objects\borderblock.xnb
 Content\chars\enemy.xnb
 Content\chars\player.xnb
 Content\chars\playerline.xnb
+Content\titleplaceholder.xnb
+Content\menubg.xnb

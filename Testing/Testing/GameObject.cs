@@ -18,9 +18,7 @@ namespace Testing
         {
             Player,
             Enemy,
-            Block,
-            LevelStart,
-            LevelFinish
+            Block
         }
 
         private Vector2 position;

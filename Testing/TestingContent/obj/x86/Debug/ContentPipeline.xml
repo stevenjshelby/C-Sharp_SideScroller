@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\chars\player.xnb</Output>
-      <Time>2012-04-21T23:59:34.1707101-07:00</Time>
+      <Time>2012-04-22T00:41:32.7787662-07:00</Time>
     </Item>
     <Item>
       <Source>chars\playerline.png</Source>
@@ -72,6 +72,24 @@
       <Options>None</Options>
       <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\chars\playerline.xnb</Output>
       <Time>2012-04-20T16:37:09.6679707-07:00</Time>
+    </Item>
+    <Item>
+      <Source>titleplaceholder.png</Source>
+      <Name>titleplaceholder</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\titleplaceholder.xnb</Output>
+      <Time>2012-04-22T01:32:08.0033711-07:00</Time>
+    </Item>
+    <Item>
+      <Source>menubg.png</Source>
+      <Name>menubg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\menubg.xnb</Output>
+      <Time>2012-04-22T01:36:18.5977043-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

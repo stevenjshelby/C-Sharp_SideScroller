@@ -88,13 +88,15 @@ namespace Testing
             lastPosition = Position;
 
             Position = new Vector2(Position.X, Position.Y  + velocity.Y);
-            if (IntersectsWithAny(currentLevel.GameObjects) != null)
+            var gobj = IntersectsWithAny(currentLevel.GameObjects);
+            if (gobj != null)
             {
                 Position = lastPosition;
                 if (!canJump)
                 {
                     velocity.Y = 0;
-                    canJump = true;
+                    if (Position.Y < gobj.Position.Y)
+                        canJump = true;
                 }
             }
             

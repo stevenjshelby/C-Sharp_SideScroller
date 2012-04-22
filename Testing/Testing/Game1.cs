@@ -27,7 +27,7 @@ namespace Testing
         private Texture2D playerTexture;
         private Texture2D enemyTexture;
         private SpriteFont spriteFont;
-        private Rectangle strartRect;
+        private Rectangle startRect;
         private Rectangle FinishRect;
         private Level currentLevel;
         private Player player;
@@ -44,6 +44,7 @@ namespace Testing
         public static int ScreenHeight { get { return screenHeight; } }
         public static Rectangle HUDRect { get { return HUD;} }
 
+<<<<<<< HEAD
         private bool InMenu = true;
         private Texture2D MenuArt;
         private Texture2D MenuBG;
@@ -58,14 +59,28 @@ namespace Testing
         private int loadTimer = 0;
         private int loadTime = 70;
         
+=======
+        public static string infoText = "";
+        public Vector2 infoPosition = new Vector2(0, 0);
+
+        public string scoreText = "";
+        public Vector2 scorePos = new Vector2(0, 0);
+
+        public string playerName = "";
+        public Dictionary<string, int> highScores = new Dictionary<string, int>();
+
+>>>>>>> joe/master
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
 
+            //HUD rectangle creation
             HUD = new Rectangle(0, 480, screenWidth, 120);
             gameState = GameState.Menu;
+
+            infoPosition = new Vector2(HUD.X, HUD.Y);
 
             Content.RootDirectory = "Content";
         }
@@ -188,6 +203,56 @@ namespace Testing
             // TODO: Unload any non ContentManager content here
         }
 
+        protected void UpdateHUD() {
+            infoText = "X= " + player.Position.X.ToString() + ", Y=" + player.Position.Y.ToString();
+            scoreText = "Score: " + player.score;
+
+            // calculate positions for crap
+            Vector2 infoTextSize = spriteFont.MeasureString(infoText);
+            scorePos = new Vector2(HUDRect.X, HUDRect.Y+infoTextSize.Y);
+        }
+
+        protected void updateHighScores()
+        {
+            loadHighScores();
+            // load high scores
+            foreach (KeyValuePair<string, int> pair in highScores) {
+                if (player.score > pair.Value)
+                {
+                    //prompt for player name
+                    highScores.Add(playerName, player.score);
+                    break;
+                }
+            }
+            // save high scores here
+            saveHighScores();
+        }
+
+        protected void loadHighScores()
+        {
+            string filename = "highscores.txt";
+            using (var sr = new StreamReader(filename))
+            {
+                while (!sr.EndOfStream)
+                {
+                    //reads a line
+                    string line = sr.ReadLine();
+                    if (line != null && (line.StartsWith("//") || line == ""))
+                        continue;
+                    if (line != null)
+                    {
+                        //load in lines
+
+                    }
+                }
+            }
+        }
+
+        protected void saveHighScores()
+        {
+
+        }
+
         private KeyboardState oldKeyboardState = Keyboard.GetState();
 
         protected override void Update(GameTime gameTime)
@@ -246,8 +311,16 @@ namespace Testing
                 {
                     currentLevel.Finished = true;
                     currentLevel.LevelFinishTime = DateTime.Now;
+
+                    //high score system
+                    updateHighScores();
                 }
             }
+
+
+            //implement HUD update here
+
+            UpdateHUD();
 
             camera.Update();
 
@@ -304,18 +377,17 @@ namespace Testing
                     Vector2 textSize = spriteFont.MeasureString(text);
                     spriteBatch.DrawString(spriteFont, text, screenCenter - textSize / 2, Color.Black);
                 }
-                //draw score
-                string pos = "X= " + player.Position.X.ToString() + ", Y=" + player.Position.Y.ToString();
-                Vector2 scoreTextSize = spriteFont.MeasureString(pos);
-                Vector2 scorePosition = new Vector2(HUDRect.X, HUDRect.Y);
-                spriteBatch.DrawString(spriteFont, pos, scorePosition, Color.White);
+                
+                //draw HUD
+                spriteBatch.DrawString(spriteFont, infoText, infoPosition, Color.White);
+                spriteBatch.DrawString(spriteFont, scoreText, scorePos, Color.White);
 
 
                 Vector2 startPosition = currentLevel.StartPosition - camera.Position;
                 Vector2 finishPosition = currentLevel.FinishPosition - camera.Position;
-            spriteBatch.End();
+                spriteBatch.End();
 
-            base.Draw(gameTime);
+                base.Draw(gameTime);
         }
 
         private void DrawLevelLoading()

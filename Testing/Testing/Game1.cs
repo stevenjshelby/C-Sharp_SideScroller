@@ -220,7 +220,8 @@ namespace Testing
                     if (line != null)
                     {
                         //load in lines
-
+                        string[] split = line.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                        //
                     }
                 }
             }

@@ -39,16 +39,19 @@ namespace Testing
         //the screen will be 27 tiles wide and 15 tiles high
         private static int screenWidth = 864;
         private static int screenHeight = 600;
-        private static int hudHeight = 120;
+        private static Rectangle HUD;
         public static int ScreenWidth { get { return screenWidth; } }
         public static int ScreenHeight { get { return screenHeight; } }
-        public static int HUDHeight { get { return hudHeight; } }
+        public static Rectangle HUDRect { get { return HUD;} }
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferWidth = screenWidth;
             graphics.PreferredBackBufferHeight = screenHeight;
+
+            HUD = new Rectangle(0, 448, screenWidth, 120);
+
             Content.RootDirectory = "Content";
         }
 
@@ -126,7 +129,7 @@ namespace Testing
         protected override void Initialize()
         {
             //initialize camera to screen size
-            camera = new Camera(0,0,screenWidth, screenHeight-hudHeight);
+            camera = new Camera(0,0,screenWidth, screenHeight-HUD.Height);
 
             base.Initialize();
         }
@@ -143,7 +146,7 @@ namespace Testing
             enemyTexture = Content.Load<Texture2D>("chars/enemy");
             enemyTexture.Name = "enemy";
 
-            playerTexture = Content.Load<Texture2D>("chars/playerline");
+            playerTexture = Content.Load<Texture2D>("chars/player");
             playerTexture.Name = "player";
 
             availableLevels = FindAvailableLevels();
@@ -156,7 +159,7 @@ namespace Testing
 
             currentLevel.Name = levelname;
 
-            player = new Player(currentLevel.StartPosition, new Vector2(0, 5), playerTexture);
+            player = new Player(currentLevel.StartPosition, new Vector2(0, 0), playerTexture);
             currentLevel.GameObjects.Add(player);
             camera.LockToObject(player);
         }

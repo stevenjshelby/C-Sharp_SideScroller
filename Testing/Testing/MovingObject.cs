@@ -35,37 +35,6 @@ namespace Testing
         }
 
         //Methods
-        public override void Update(Level currentLevel)
-        {
-            if (!alive)
-                return;
-
-            Vector2 lastPosition = Position;
-            if (velocity.Y > 0)
-                Position += new Vector2(velocity.X, 0);
-            else
-                Position += velocity;
-            velocity.X *= 0.75f;
-            if (velocity.Y < 0)
-                velocity.Y *= 0.90f;
-
-            var gobj = IntersectsWithAny(currentLevel.GameObjects);
-
-            if (gobj != null)
-            {
-                Position = lastPosition;
-                velocity = new Vector2(0, velocity.Y);
-                HitWall();
-            }
-
-            ApplyGravity(currentLevel);
-
-            if (Position.Y > Game1.ScreenHeight)
-            {
-                //below visible screen
-                Die();
-            }
-        }
 
         public virtual void Move(Direction dir, float speed)
         {

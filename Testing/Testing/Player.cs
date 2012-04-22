@@ -29,7 +29,7 @@ namespace Testing
         {
             if (alive && canJump)
             {
-                velocity.Y += -(float)Math.Cos(Math.PI/4) * 15;
+                velocity.Y += -(float)Math.Cos(Math.PI/4) * 8;
                 canJump = false;
             }
         }
@@ -43,7 +43,7 @@ namespace Testing
         public override void DetectEnemyHit(MovingObject mob)
         {
             //if collision with enemy
-            if (Position.Y <= mob.Position.Y+mob.Height)
+            if (Position.Y + Height - 4 <= mob.Position.Y + 12)
             {
                 //kill enemy if coming from above
                 if (velocity.Y > 0)
@@ -70,6 +70,38 @@ namespace Testing
             if (SpriteBounds.Intersects(currentLevel.FinishZone))
                 return true;
             return false;
+        }
+
+        public override void Update(Level currentLevel)
+        {
+            if (!alive)
+                return;
+
+            Vector2 lastPosition = Position;
+
+            Position = new Vector2(Position.X + velocity.X, Position.Y);
+            if (IntersectsWithAny(currentLevel.GameObjects) != null)
+                Position = lastPosition;
+
+            velocity.X *= 0.75f;
+
+            lastPosition = Position;
+
+            Position = new Vector2(Position.X, Position.Y  + velocity.Y);
+            if (IntersectsWithAny(currentLevel.GameObjects) != null)
+            {
+                Position = lastPosition;
+                if (velocity.Y < 0)
+                    velocity.Y = 0;
+            }
+            
+            ApplyGravity(currentLevel);
+
+            if (Position.Y > Game1.ScreenHeight)
+            {
+                //below visible screen
+                Die();
+            }
         }
     }
 }

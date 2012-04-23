@@ -27,8 +27,6 @@ namespace Testing
         private Texture2D playerTexture;
         private Texture2D enemyTexture;
         private SpriteFont spriteFont;
-        private Rectangle strartRect;
-        private Rectangle FinishRect;
         private Level currentLevel;
         private Player player;
         private Camera camera;
@@ -266,17 +264,23 @@ namespace Testing
             {
                 if (gameState == GameState.Paused)
                     gameState = GameState.Game;
-                else
+                else if (gameState == GameState.Game)
                     gameState = GameState.Paused;
             }
 
-            if (gameState == GameState.Menu && keyboard.IsKeyDown(Keys.Enter))
+            if (gameState == GameState.Menu)
             {
-                gameState = GameState.Loading;
+                if (keyboard.IsKeyDown(Keys.Enter))
+                    gameState = GameState.Loading;
+                else if(keyboard.IsKeyDown(Keys.O))
+                    gameState = GameState.Options;
             }
-            else if (gameState == GameState.Menu && keyboard.IsKeyDown(Keys.O))
+            else if (gameState == GameState.Options)
             {
-                gameState = GameState.Options;
+                if (keyboard.IsKeyDown(Keys.Back))
+                    gameState = GameState.Menu;
+
+                //code
             }
             else if (gameState == GameState.Game)
             {
@@ -366,7 +370,7 @@ namespace Testing
             {
                 spriteBatch.Begin();
                 spriteBatch.Draw(MenuBG, Vector2.Zero, Color.White);
-                string str = "This is the Options Menu";
+                string str = "This is the Options Menu"+Environment.NewLine+"Press Back to Return to Menu";
                 Vector2 stringlen = spriteFont.MeasureString(str);
                 Vector2 stringpos = new Vector2(ScreenWidth / 2 - stringlen.X / 2, screenHeight / 2 - stringlen.Y);
                 spriteBatch.DrawString(spriteFont, str, stringpos, Color.White);

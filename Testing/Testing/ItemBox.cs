@@ -16,7 +16,6 @@ namespace Testing
     class ItemBox : GameObject
     {
         private bool hit = false;
-        private int animationTimer = 0;
         private const int animationTime = 30;
 
         private GameObject item;
@@ -31,6 +30,7 @@ namespace Testing
         public void Hit()
         {
             hit = true;
+            item.alive = true;
         }
     }
 }

@@ -15,11 +15,11 @@ namespace Testing
     {
         public enum ObjectType
         {
-            Player,
-            Enemy,
-            Block,
-            ItemBox,
-            Item
+            Player, //Player Class
+            Enemy, //Enemy Class
+            Block, //part of the GameObject Class
+            ItemBox, //ItemBox Class
+            Item //Item Class
         }
 
         private Vector2 position;
@@ -28,6 +28,7 @@ namespace Testing
         public Rectangle SpriteBounds;
         public ObjectType Type;
         public bool alive = true;
+        public bool solid = true;
         public bool animating = false;
 
         public Vector2 Position

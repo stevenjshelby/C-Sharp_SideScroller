@@ -89,7 +89,7 @@ namespace Testing
             {
                 if (gobj == this)
                     continue;
-                if (Collision(gobj))
+                if (Collision(gobj) && gobj.solid)
                 {
                     if (gobj.Type == ObjectType.Enemy || gobj.Type == ObjectType.Player)
                     {

@@ -50,7 +50,7 @@ namespace Testing
         public override void DetectEnemyHit(MovingObject mob)
         {
             //if collision with enemy
-            if (Position.Y + Height - 4 <= mob.Position.Y + 16)
+            if (Position.Y + Height - 8 <= mob.Position.Y + 16)
             {
                 //kill enemy if coming from above
                 if (velocity.Y > 0)
@@ -88,7 +88,8 @@ namespace Testing
 
             //moving X position
             Position = new Vector2(Position.X + velocity.X, Position.Y);
-            if (IntersectsWithAny(currentLevel.GameObjects) != null)
+            var gobj = IntersectsWithAny(currentLevel.GameObjects);
+            if (gobj != null && gobj.solid)
                 Position = lastPosition;
 
             velocity.X *= 0.75f;
@@ -97,13 +98,15 @@ namespace Testing
 
             //moving Y position
             Position = new Vector2(Position.X, Position.Y  + velocity.Y);
-            var gobj = IntersectsWithAny(currentLevel.GameObjects);
-            if (gobj != null)
+            gobj = IntersectsWithAny(currentLevel.GameObjects);
+            if (gobj != null && gobj.solid)
             {
                 if (gobj.Type == ObjectType.ItemBox && velocity.Y < 0)
                 {
                     ItemBox ibox = (ItemBox)gobj;
-                    ibox.Hit();
+                    if (Position.Y >= (ibox.Position.Y + ibox.Height - 5))
+                        if ((Position.X + Width/2 > ibox.Position.X) && (Position.X + Width/2 < ibox.Position.X + ibox.Width))
+                            ibox.Hit();
                 }
                 Position = lastPosition;
                 if (!canJump)

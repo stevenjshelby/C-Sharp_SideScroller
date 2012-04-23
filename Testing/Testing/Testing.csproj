@@ -111,6 +111,7 @@
     <Compile Include="Camera.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="FrameAnimation.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="ItemBox.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="MovingObject.cs" />

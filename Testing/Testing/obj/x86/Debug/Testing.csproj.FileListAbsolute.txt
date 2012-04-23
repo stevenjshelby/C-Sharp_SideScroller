@@ -16,3 +16,4 @@ C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\ob
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\obj\x86\Debug\Testing.exe
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\obj\x86\Debug\Testing.pdb
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\objects\itembox.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\objects\item.xnb

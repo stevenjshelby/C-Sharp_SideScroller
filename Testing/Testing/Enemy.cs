@@ -42,7 +42,7 @@ namespace Testing
 
             var gobj = IntersectsWithAny(currentLevel.GameObjects);
 
-            if (gobj != null)
+            if (gobj != null && gobj.solid)
             {
                 Position = lastPosition;
                 HitWall();

@@ -60,7 +60,8 @@ namespace Testing
             Loading,
             Game,
             Options,
-            Paused
+            Paused,
+            Credits
         }
         public GameState gameState;
         private int loadTimer = 0;
@@ -135,11 +136,9 @@ namespace Testing
                         else if (split[2] == "itembox")
                         {
                             Texture2D sprite = Content.Load<Texture2D>("objects/itembox");
-                            GameObject newItem = new GameObject(new Vector2(float.Parse(split[4]),
+                            Item newItem = new Item(new Vector2(float.Parse(split[4]),
                                                                             float.Parse(split[5])),
-                                                                Vector2.Zero,
-                                                                ItemTextures[int.Parse(split[3])],
-                                                                GameObject.ObjectType.Item);
+                                                                ItemTextures[int.Parse(split[3])]);
                             newItem.alive = false;
                             ItemBox itemBoxObj = new ItemBox(new Vector2(float.Parse(split[0]),
                                                                          float.Parse(split[1])),
@@ -193,8 +192,7 @@ namespace Testing
             MenuArt = Content.Load<Texture2D>("titleplaceholder");
             MenuBG = Content.Load<Texture2D>("menubg");
 
-            ItemTextures[0] = Content.Load<Texture2D>("chars/player"); //need texture for items
-            ItemTextures[1] = Content.Load<Texture2D>("chars/player"); //need texture for items
+            ItemTextures[0] = Content.Load<Texture2D>("objects/item");
 
             availableLevels = FindAvailableLevels();
             NextLevel();

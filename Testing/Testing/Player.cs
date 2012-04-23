@@ -99,16 +99,34 @@ namespace Testing
             //moving Y position
             Position = new Vector2(Position.X, Position.Y  + velocity.Y);
             gobj = IntersectsWithAny(currentLevel.GameObjects);
-            if (gobj != null && gobj.solid)
+            if (gobj != null)
             {
                 if (gobj.Type == ObjectType.ItemBox && velocity.Y < 0)
                 {
                     ItemBox ibox = (ItemBox)gobj;
                     if (Position.Y >= (ibox.Position.Y + ibox.Height - 5))
                         if ((Position.X + Width/2 > ibox.Position.X) && (Position.X + Width/2 < ibox.Position.X + ibox.Width))
-                            ibox.Hit();
+                            if (!ibox.hit)
+                                ibox.Hit();
                 }
-                Position = lastPosition;
+                else if (gobj.Type == ObjectType.Item)
+                {
+                    Item I = (Item)gobj;
+                    switch (I.ItemIndex)
+                    {
+                        case 0: //super size
+                                break;
+                        
+                        case 1: //invincible
+                                break;
+                    }
+                    I.alive = false;
+                }
+
+                if (gobj.solid)
+                {
+                    Position = lastPosition;
+                }
                 if (!canJump)
                 {
                     velocity.Y = 0;

@@ -138,7 +138,8 @@ namespace Testing
                             Texture2D sprite = Content.Load<Texture2D>("objects/itembox");
                             Item newItem = new Item(new Vector2(float.Parse(split[4]),
                                                                             float.Parse(split[5])),
-                                                                ItemTextures[int.Parse(split[3])]);
+                                                                ItemTextures[int.Parse(split[3])],
+                                                                int.Parse(split[3]));
                             newItem.alive = false;
                             ItemBox itemBoxObj = new ItemBox(new Vector2(float.Parse(split[0]),
                                                                          float.Parse(split[1])),
@@ -184,10 +185,10 @@ namespace Testing
             backgroundTexture = Content.Load<Texture2D>("bg");
 
             enemyTexture = Content.Load<Texture2D>("chars/enemy");
-            enemyTexture.Name = "enemy";
+            //enemyTexture.Name = "enemy";
 
             playerTexture = Content.Load<Texture2D>("chars/player");
-            playerTexture.Name = "player";
+            //playerTexture.Name = "player";
 
             MenuArt = Content.Load<Texture2D>("titleplaceholder");
             MenuBG = Content.Load<Texture2D>("menubg");

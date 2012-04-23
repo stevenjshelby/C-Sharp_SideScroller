@@ -100,6 +100,15 @@
       <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\objects\item.xnb</Output>
       <Time>2012-04-23T12:40:07.8747021-07:00</Time>
     </Item>
+    <Item>
+      <Source>chars\playerbig.png</Source>
+      <Name>chars\playerbig</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\Testing\bin\x86\Debug\Content\chars\playerbig.xnb</Output>
+      <Time>2012-04-23T13:10:06.8315965-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

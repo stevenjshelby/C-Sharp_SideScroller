@@ -9,3 +9,4 @@ Content\titleplaceholder.xnb
 Content\menubg.xnb
 Content\objects\itembox.xnb
 Content\objects\item.xnb
+Content\chars\playerbig.xnb

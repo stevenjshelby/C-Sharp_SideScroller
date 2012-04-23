@@ -15,11 +15,16 @@ namespace Testing
 {
     class Item : GameObject
     {
+        public int ItemIndex;
+        //0 = supersize
+        //1 = invincible
+
         //Constructor
-        public Item(Vector2 pos, Texture2D spritetex)
+        public Item(Vector2 pos, Texture2D spritetex, int index)
                 : base(pos, Vector2.Zero, spritetex, ObjectType.Item)
         {
             solid = false;
+            ItemIndex = index;
         }
     }
 }

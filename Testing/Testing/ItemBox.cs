@@ -15,8 +15,7 @@ namespace Testing
 {
     class ItemBox : GameObject
     {
-        private bool hit = false;
-        private const int animationTime = 30;
+        public bool hit = false;
 
         private GameObject item;
 

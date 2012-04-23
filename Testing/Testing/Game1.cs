@@ -26,6 +26,7 @@ namespace Testing
         private Texture2D backgroundTexture;
         private Texture2D playerTexture;
         private Texture2D enemyTexture;
+        private Texture2D[] ItemTextures = new Texture2D[2];
         private SpriteFont spriteFont;
         private Level currentLevel;
         private Player player;
@@ -42,7 +43,7 @@ namespace Testing
         public static int ScreenHeight { get { return screenHeight; } }
         public static Rectangle HUDRect { get { return HUD;} }
 
-        public static string infoText = "";
+        public string infoText = "";
         public Vector2 infoPosition = new Vector2(0, 0);
 
         public string scoreText = "";
@@ -63,7 +64,7 @@ namespace Testing
         }
         public GameState gameState;
         private int loadTimer = 0;
-        private int loadTime = 70;
+        private const int loadTime = 80;
         
         public Game1()
         {
@@ -131,13 +132,30 @@ namespace Testing
                                                     sprite);
                             level.GameObjects.Add(enemy);
                         }
+                        else if (split[2] == "itembox")
+                        {
+                            Texture2D sprite = Content.Load<Texture2D>("objects/itembox");
+                            GameObject newItem = new GameObject(new Vector2(float.Parse(split[4]),
+                                                                            float.Parse(split[5])),
+                                                                Vector2.Zero,
+                                                                ItemTextures[int.Parse(split[3])],
+                                                                GameObject.ObjectType.Item);
+                            newItem.alive = false;
+                            ItemBox itemBoxObj = new ItemBox(new Vector2(float.Parse(split[0]),
+                                                                         float.Parse(split[1])),
+                                                             Vector2.Zero,
+                                                             sprite,
+                                                             GameObject.ObjectType.ItemBox,
+                                                             newItem);
+                            level.GameObjects.Add(itemBoxObj);
+                            level.GameObjects.Add(newItem);
+                        }
                         else
                         {
-                            var sprite = Content.Load<Texture2D>("objects/" + split[2]);
-                            sprite.Name = split[2];
-                            var gameObj = new GameObject(
+                            Texture2D sprite = Content.Load<Texture2D>("objects/" + split[2]);
+                            GameObject gameObj = new GameObject(
                                 new Vector2(float.Parse(split[0]), float.Parse(split[1])),
-                                new Vector2(0, 0), sprite, GameObject.ObjectType.Block);
+                                Vector2.Zero, sprite, GameObject.ObjectType.Block);
                             level.GameObjects.Add(gameObj);
                         }
                     }
@@ -174,6 +192,9 @@ namespace Testing
 
             MenuArt = Content.Load<Texture2D>("titleplaceholder");
             MenuBG = Content.Load<Texture2D>("menubg");
+
+            ItemTextures[0] = Content.Load<Texture2D>("chars/player"); //need texture for items
+            ItemTextures[1] = Content.Load<Texture2D>("chars/player"); //need texture for items
 
             availableLevels = FindAvailableLevels();
             NextLevel();

@@ -130,14 +130,7 @@
 2368,448,ground
 2400,448,ground
 1664,416,ground
-1696,416,enemy
-992,416,enemy
 1216,416,ground
-1184,416,enemy
-1664,224,enemy
-1792,224,enemy
-2144,416,enemy
-2304,416,enemy
 2464,256,ground
 2496,256,ground
 2528,256,ground
@@ -252,9 +245,6 @@
 4192,448,ground
 4160,448,ground
 4224,448,ground
-3296,416,enemy
-3200,416,enemy
-3680,416,enemy
 4256,448,ground
 4288,448,ground
 4320,448,ground

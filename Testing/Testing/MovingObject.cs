@@ -18,23 +18,18 @@ namespace Testing
     /// </summary>
     abstract class MovingObject : GameObject
     {
-        //Variables
         public enum Direction
         {
             Left,
             Right
         }
 
-        //Properties
-
-        //Constructors
+        //Constructor
         public MovingObject(Vector2 pos, Vector2 vel, Texture2D spritetex, ObjectType objType)
                 : base(pos, vel, spritetex, objType)
         {
-            alive = true;
-        }
 
-        //Methods
+        }
 
         public virtual void Move(Direction dir, float speed)
         {

@@ -89,13 +89,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="chars\playerline.png">
-      <Name>playerline</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="titleplaceholder.png">
       <Name>titleplaceholder</Name>
       <Importer>TextureImporter</Importer>
@@ -105,6 +98,13 @@
   <ItemGroup>
     <Compile Include="menubg.png">
       <Name>menubg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="objects\itembox.png">
+      <Name>itembox</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

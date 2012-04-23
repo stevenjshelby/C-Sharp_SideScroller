@@ -10,7 +10,6 @@ namespace Testing
 {
     class Level
     {
-        //Variables
         public string Name;
         public List<GameObject> GameObjects;
         public Vector2 StartPosition;

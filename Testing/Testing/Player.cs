@@ -15,17 +15,23 @@ namespace Testing
 {
     class Player : MovingObject
     {
-        //Variables
         private bool canJump = true;
         public int score = 0;
 
-        //Constructors
+        public enum Status
+        {
+            SuperSize,
+            Invincible,
+            Small
+        }
+        public Status status = Status.Small;
+
+        //Constructor
         public Player(Vector2 position, Vector2 velocity, Texture2D sprite)
             : base(position, velocity, sprite, ObjectType.Player)
         {
         }
 
-        //Methods
         public void Jump()
         {
             if (alive && canJump)
@@ -80,6 +86,7 @@ namespace Testing
 
             Vector2 lastPosition = Position;
 
+            //moving X position
             Position = new Vector2(Position.X + velocity.X, Position.Y);
             if (IntersectsWithAny(currentLevel.GameObjects) != null)
                 Position = lastPosition;
@@ -88,10 +95,16 @@ namespace Testing
 
             lastPosition = Position;
 
+            //moving Y position
             Position = new Vector2(Position.X, Position.Y  + velocity.Y);
             var gobj = IntersectsWithAny(currentLevel.GameObjects);
             if (gobj != null)
             {
+                if (gobj.Type == ObjectType.ItemBox && velocity.Y < 0)
+                {
+                    ItemBox ibox = (ItemBox)gobj;
+                    ibox.Hit();
+                }
                 Position = lastPosition;
                 if (!canJump)
                 {

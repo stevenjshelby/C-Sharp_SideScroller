@@ -13,12 +13,13 @@ namespace Testing
     /// </summary>
     class GameObject
     {
-        //Variables
         public enum ObjectType
         {
             Player,
             Enemy,
-            Block
+            Block,
+            ItemBox,
+            Item
         }
 
         private Vector2 position;
@@ -27,8 +28,8 @@ namespace Testing
         public Rectangle SpriteBounds;
         public ObjectType Type;
         public bool alive = true;
+        public bool animating = false;
 
-        //Properties
         public Vector2 Position
         {
             get { return position; }
@@ -50,7 +51,7 @@ namespace Testing
             get { return sprite.Height; }
         }
 
-        //Constructors
+        //Constructor
         public GameObject(Vector2 pos, Vector2 vel, Texture2D spritetex, ObjectType objType)
         {
             position = pos;
@@ -60,10 +61,9 @@ namespace Testing
             SpriteBounds = new Rectangle((int)position.X, (int)position.Y, sprite.Width, sprite.Height);
         }
 
-        //Methods
         public bool Collision(GameObject o)
         {
-            if (SpriteBounds.Intersects(o.SpriteBounds))
+            if (SpriteBounds.Intersects(o.SpriteBounds) && o.alive)
             {
                 if (PixelsIntersect(SpriteBounds,
                                     TextureToArray(sprite),

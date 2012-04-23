@@ -24,7 +24,7 @@ namespace Testing
             SpawnLocation = new Point((int)position.X, (int)position.Y);
         }
 
-        public override void Update(Level currentLevel)
+        public override void Update(Level currentLevel, GameTime gameTime)
         {
             if (!alive)
                 return;
@@ -32,23 +32,17 @@ namespace Testing
             Move(MovementDirection, 0.1f);
 
             Vector2 lastPosition = Position;
-            if (velocity.Y > 0)
-                Position += new Vector2(velocity.X, 0);
-            else
-                Position += velocity;
+            Position += new Vector2(velocity.X, 0);
             velocity.X *= 0.75f;
-            if (velocity.Y < 0)
-                velocity.Y *= 0.90f;
 
             var gobj = IntersectsWithAny(currentLevel.GameObjects);
-
             if (gobj != null && gobj.solid)
             {
                 Position = lastPosition;
                 HitWall();
             }
 
-            base.Update(currentLevel);
+            base.Update(currentLevel, gameTime);
         }
 
         public override void HitWall()

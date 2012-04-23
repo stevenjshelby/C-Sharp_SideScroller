@@ -1,2 +1,3 @@
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\TestingContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Joe\code\Practice\Testing\TestingContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Steven\Desktop\Practice\Testing\TestingContent\obj\x86\Debug\ResolveAssemblyReference.cache

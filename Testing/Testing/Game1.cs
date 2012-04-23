@@ -330,7 +330,7 @@ namespace Testing
 
                 foreach (GameObject gobj in currentLevel.GameObjects)
                 {
-                    gobj.Update(currentLevel);
+                    gobj.Update(currentLevel, gameTime);
                 }
 
                 if (currentLevel.Finished)

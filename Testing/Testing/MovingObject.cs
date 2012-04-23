@@ -18,6 +18,9 @@ namespace Testing
     /// </summary>
     abstract class MovingObject : GameObject
     {
+        FrameAnimation leftanimation;
+        FrameAnimation rightanimation;
+
         public enum Direction
         {
             Left,
@@ -28,7 +31,15 @@ namespace Testing
         public MovingObject(Vector2 pos, Vector2 vel, Texture2D spritetex, ObjectType objType)
                 : base(pos, vel, spritetex, objType)
         {
+            leftanimation = new FrameAnimation(2, 32, 32, 0, 0);
+            leftanimation.FramesPerSecond = 4;
+            Animations.Add("LeftAnimation", leftanimation);
 
+            rightanimation = new FrameAnimation(2, 32, 32, 64, 0);
+            rightanimation.FramesPerSecond = 4;
+            Animations.Add("RightAnimation", rightanimation);
+
+            CurrentAnimationName = "RightAnimation";
         }
 
         public virtual void Move(Direction dir, float speed)
@@ -115,7 +126,7 @@ namespace Testing
         {
         }
 
-        public override void Update(Level currentLevel)
+        public override void Update(Level currentLevel, GameTime gameTime)
         {
             ApplyGravity(currentLevel);
 
@@ -124,6 +135,8 @@ namespace Testing
                 //below visible screen
                 Die();
             }
+
+            base.Update(currentLevel, gameTime);
         }
     }
 }

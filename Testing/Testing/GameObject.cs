@@ -13,6 +13,43 @@ namespace Testing
     /// </summary>
     class GameObject
     {
+        //variables for changing the sprites animations
+        public Dictionary<string, FrameAnimation> Animations = new Dictionary<string, FrameAnimation>();
+        protected string currentAnimation = null;
+        protected bool animating = true;
+
+        public bool IsAnimating
+        {
+            get { return animating; }
+            set { animating = value; }
+        }
+
+        public FrameAnimation CurrentAnimation
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(currentAnimation))
+                    return Animations[currentAnimation];
+                else return null;
+            }
+        }
+
+        
+        public string CurrentAnimationName
+        {
+            get { return currentAnimation;  }
+            set
+            {
+                if (Animations.ContainsKey(value))
+                    currentAnimation = value;
+            }
+        }
+
+
+
+
+
+
         public enum ObjectType
         {
             Player, //Player Class
@@ -29,7 +66,6 @@ namespace Testing
         public ObjectType Type;
         public bool alive = true;
         public bool solid = true;
-        public bool animating = false;
 
         public Vector2 Position
         {
@@ -118,8 +154,32 @@ namespace Testing
             return null;
         }
 
-        public virtual void Update(Level currentLevel)
+        public virtual void Update(Level currentLevel, GameTime gameTime)
         {
+            //this is for updating the animations,
+            //the rest of the update code is within 
+            //sub-classes
+            if (!IsAnimating)
+                return;
+
+            FrameAnimation animation = CurrentAnimation;
+
+            if (animation == null)
+            {
+                if (Animations.Count > 0)
+                {
+                    string[] keys = new string[Animations.Count];
+                    Animations.Keys.CopyTo(keys, 0);
+
+                    currentAnimation = keys[0];
+
+                    animation = CurrentAnimation;
+                }
+                else
+                    return;
+            }
+
+            animation.Update(gameTime);
         }
 
     }

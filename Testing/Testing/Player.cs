@@ -18,18 +18,11 @@ namespace Testing
         private bool canJump = true;
         public int score = 0;
 
-        public enum Status
-        {
-            SuperSize,
-            Invincible,
-            Small
-        }
-        public Status status = Status.Small;
-
         //Constructor
         public Player(Vector2 position, Vector2 velocity, Texture2D sprite)
             : base(position, velocity, sprite, ObjectType.Player)
         {
+            
         }
 
         public void Jump()
@@ -57,7 +50,7 @@ namespace Testing
                 {
                     mob.Die();
                     score += 1;
-                    velocity.Y = Math.Min(-velocity.Y, -5);
+                    velocity.Y = Math.Min(-velocity.Y, -4);
                 }
             }
             else
@@ -79,7 +72,7 @@ namespace Testing
             return false;
         }
 
-        public override void Update(Level currentLevel)
+        public override void Update(Level currentLevel, GameTime gameTime)
         {
             if (!alive)
                 return;
@@ -139,7 +132,7 @@ namespace Testing
                 canJump = false;
             }
 
-            base.Update(currentLevel);
+            base.Update(currentLevel, gameTime);
         }
     }
 }

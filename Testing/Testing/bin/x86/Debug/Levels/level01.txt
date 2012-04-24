@@ -56,9 +56,9 @@
 544,352,block
 512,352,block
 480,352,block
+448,352,itembox,1,448,320
 -32,288,borderblock
-416,352,block
-448,352,block
+416,352,itembox,0,416,320
 672,416,ground
 768,416,ground
 768,384,ground

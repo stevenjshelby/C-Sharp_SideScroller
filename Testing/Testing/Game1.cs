@@ -43,11 +43,14 @@ namespace Testing
         public static int ScreenHeight { get { return screenHeight; } }
         public static Rectangle HUDRect { get { return HUD;} }
 
-        public string infoText = "";
+        public string infoText;
         public Vector2 infoPosition = new Vector2(0, 0);
 
-        public string scoreText = "";
-        public Vector2 scorePos = new Vector2(0, 0);
+        public string scoreText;
+        public Vector2 scorePos;
+
+        public string statusText;
+        public Vector2 statusPos;
 
         public string playerName = "";
         public Dictionary<string, int> highScores = new Dictionary<string, int>();
@@ -194,6 +197,7 @@ namespace Testing
             MenuBG = Content.Load<Texture2D>("menubg");
 
             ItemTextures[0] = Content.Load<Texture2D>("objects/item");
+            ItemTextures[1] = Content.Load<Texture2D>("objects/item");
 
             availableLevels = FindAvailableLevels();
             NextLevel();
@@ -209,22 +213,6 @@ namespace Testing
             currentLevel.GameObjects.Add(player);
             camera.LockToObject(player);
         }
-
-        protected override void UnloadContent()
-        {
-            // TODO: Unload any non ContentManager content here
-        }
-
-        protected void UpdateHUD()
-        {
-            infoText = "X= " + player.Position.X.ToString() + ", Y=" + player.Position.Y.ToString();
-            scoreText = "Score: " + player.score;
-
-            // calculate positions for crap
-            Vector2 infoTextSize = spriteFont.MeasureString(infoText);
-            scorePos = new Vector2(HUDRect.X, HUDRect.Y + infoTextSize.Y);
-        }
-
 
         protected void updateHighScores()
         {
@@ -352,11 +340,10 @@ namespace Testing
                         updateHighScores();
                     }
                 }
-
-                UpdateHUD();
-
                 camera.Update();
             }
+
+            UpdateHUD();
 
             oldKeyboardState = keyboard;
 
@@ -426,19 +413,38 @@ namespace Testing
                 Vector2 startPosition = currentLevel.StartPosition - camera.Position;
                 Vector2 finishPosition = currentLevel.FinishPosition - camera.Position;
                 spriteBatch.End();
-            }
 
-            DrawHUD();
+                DrawHUD();
+            }
             
             base.Draw(gameTime);
+        }
+
+        //update HUD info
+        protected void UpdateHUD()
+        {
+            infoText = "X= " + player.Position.X.ToString() + ", Y=" + player.Position.Y.ToString();
+
+            // calculate position for crap
+            Vector2 infoTextSize = spriteFont.MeasureString(infoText);
+            scorePos = new Vector2(HUDRect.X, HUDRect.Y + infoTextSize.Y);
+
+            scoreText = "Score: " + player.score;
+
+            // calculate position for crap
+            Vector2 scoreTextSize = spriteFont.MeasureString(scoreText);
+            statusPos = new Vector2(HUDRect.X, HUDRect.Y + scoreTextSize.Y + infoTextSize.Y);
+
+            statusText = "Status: " + player.status;
         }
 
         //draw HUD
         private void DrawHUD()
         {
             spriteBatch.Begin();
-                spriteBatch.DrawString(spriteFont, infoText, infoPosition, Color.White);
+                //spriteBatch.DrawString(spriteFont, infoText, infoPosition, Color.White);
                 spriteBatch.DrawString(spriteFont, scoreText, scorePos, Color.White);
+                spriteBatch.DrawString(spriteFont, statusText, statusPos, Color.White);
             spriteBatch.End();
         }
 

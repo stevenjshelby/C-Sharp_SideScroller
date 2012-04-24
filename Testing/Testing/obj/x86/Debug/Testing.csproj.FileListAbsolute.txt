@@ -38,3 +38,23 @@ C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\pla
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Testing.exe
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Testing.pdb
 C:\Users\Steven\Desktop\Practice\Testing\Testing\obj\x86\Debug\Testing.pdb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Levels\level01.txt
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Levels\level02.txt
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\HUDFont.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\ground.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\block.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\bg.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\borderblock.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\chars\enemy.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\chars\player.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\titleplaceholder.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\menubg.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\itembox.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\item.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\chars\playerbig.xnb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Testing.exe
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Testing.pdb
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\Testing.exe
+C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\Testing.pdb

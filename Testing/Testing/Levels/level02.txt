@@ -17,7 +17,11 @@
 -32,448,borderblock
 -32,480,borderblock
 -32,512,borderblock
-448,352,itembox,0,448,320
+448,352,itembox,1,448,320
+384,416,enemy
+448,416,enemy
+512,416,enemy
+576,416,enemy
 0,448,ground
 32,448,ground
 64,448,ground

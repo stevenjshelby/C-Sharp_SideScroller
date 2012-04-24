@@ -73,7 +73,7 @@ namespace Testing
             velocity.Y = 0;
         }
 
-        public void Die()
+        public virtual void Die()
         {
             alive = false;
             velocity = Vector2.Zero;

@@ -17,12 +17,29 @@ namespace Testing
     {
         private bool canJump = true;
         public int score = 0;
+        public bool hurt = false;
+
+        public int hurtTimer = 0;
+        public const int hurtTime = 60;
+
+        public int invincibleTimer = 0;
+        public const int invincibleTime = 520;
+
+        public enum Status
+        {
+            Small,
+            Big,
+            Invincible
+        }
+        public Status status;
+        private Status previousStatus; //used for invincibility
 
         //Constructor
         public Player(Vector2 position, Vector2 velocity, Texture2D sprite)
             : base(position, velocity, sprite, ObjectType.Player)
         {
-            
+            status = Status.Small;
+            previousStatus = status;
         }
 
         public void Jump()
@@ -42,6 +59,9 @@ namespace Testing
 
         public override void DetectEnemyHit(MovingObject mob)
         {
+            if (status == Status.Invincible)
+                return;
+
             //if collision with enemy
             if (Position.Y + Height - 8 <= mob.Position.Y + 16)
             {
@@ -70,6 +90,21 @@ namespace Testing
             if (SpriteBounds.Intersects(currentLevel.FinishZone))
                 return true;
             return false;
+        }
+
+        public override void Die()
+        {
+            if (status == Status.Small && !hurt)
+            {
+                alive = false;
+                velocity = Vector2.Zero;
+                Position = new Vector2(0, 0);
+            }
+            else if (status == Status.Big)
+            {
+                hurt = true;
+                status = Status.Small;
+            }
         }
 
         public override void Update(Level currentLevel, GameTime gameTime)
@@ -107,10 +142,11 @@ namespace Testing
                     Item I = (Item)gobj;
                     switch (I.ItemIndex)
                     {
-                        case 0: //super size
+                        case 0: status = Status.Big;
                                 break;
-                        
-                        case 1: //invincible
+
+                        case 1: previousStatus = status;
+                                status = Status.Invincible;
                                 break;
                     }
                     I.alive = false;
@@ -130,6 +166,25 @@ namespace Testing
             else 
             {
                 canJump = false;
+            }
+
+            //increment the hurt timer
+            //So the player doesn't die right away even when big
+            if (hurt)
+                hurtTimer++;
+            if (hurtTimer > hurtTime)
+            {
+                hurt = false;
+                hurtTimer = 0;
+            }
+
+            //increment the invincible timer
+            if (status == Status.Invincible)
+                invincibleTimer++;
+            if (invincibleTimer > invincibleTime)
+            {
+                status = previousStatus;
+                invincibleTimer = 0;
             }
 
             base.Update(currentLevel, gameTime);

@@ -56,6 +56,17 @@ namespace Testing
             if (mob.Type == this.Type)
                 return;
 
+            //if player is invincible then die
+            if (mob.Type == ObjectType.Player)
+            {
+                Player p = (Player)mob;
+                if (p.status == Player.Status.Invincible)
+                {
+                    Die();
+                    p.score++;
+                }
+            }
+
             //collision with enemy detected
             if (Position.Y > mob.Position.Y+mob.Height)
             {

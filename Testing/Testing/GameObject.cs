@@ -46,10 +46,6 @@ namespace Testing
         }
 
 
-
-
-
-
         public enum ObjectType
         {
             Player, //Player Class
@@ -88,6 +84,8 @@ namespace Testing
             get { return sprite.Height; }
         }
 
+        FrameAnimation an;
+
         //Constructor
         public GameObject(Vector2 pos, Vector2 vel, Texture2D spritetex, ObjectType objType)
         {
@@ -96,6 +94,12 @@ namespace Testing
             sprite = spritetex;
             Type = objType;
             SpriteBounds = new Rectangle((int)position.X, (int)position.Y, sprite.Width, sprite.Height);
+
+            an = new FrameAnimation(1, 32, 32, 0, 0);
+            an.FramesPerSecond = 4;
+            Animations.Add("animation1", an);
+
+            CurrentAnimationName = "animation1";
         }
 
         public bool Collision(GameObject o)
@@ -180,6 +184,20 @@ namespace Testing
             }
 
             animation.Update(gameTime);
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch, Vector2 actualPos)
+        {
+            FrameAnimation animation = CurrentAnimation;
+
+            if (animation != null)
+            {
+                spriteBatch.Draw(sprite,
+                                 actualPos,
+                                 animation.CurrentRect,
+                                 Color.White);
+
+            }
         }
 
     }

@@ -405,7 +405,8 @@ namespace Testing
                     if (camera.Visible(gobj) && gobj.alive)
                     {
                         Vector2 actualPosition = gobj.Position - camera.Position;
-                        spriteBatch.Draw(gobj.sprite, actualPosition, Color.White);
+                        //spriteBatch.Draw(gobj.sprite, actualPosition, Color.White);
+                        gobj.Draw(spriteBatch, actualPosition);
                     }
                 }
                 Vector2 screenCenter = new Vector2(GraphicsDevice.Viewport.Width / 2, 100);

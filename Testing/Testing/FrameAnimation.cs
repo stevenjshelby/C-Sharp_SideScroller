@@ -6,7 +6,7 @@ namespace Testing
 {
     public class FrameAnimation : ICloneable
     {
-        Rectangle[] frames; //Holds an array of rectangles that hold the Rectangle coordinates of each frame
+        Rectangle[] frames; //Holds an array of rectangles that hold the Rectangle coordinates of each frame within the Texture2D
         int currentFrame = 0; //Index of current frame in the Rectangle[]
 
         float frameLength = 0.5f; //Number of seconds to wait before switching frames

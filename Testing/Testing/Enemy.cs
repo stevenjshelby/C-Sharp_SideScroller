@@ -29,7 +29,7 @@ namespace Testing
             if (!alive)
                 return;
 
-            Move(MovementDirection, 0.1f);
+            Move(MovementDirection, 0.3f);
 
             Vector2 lastPosition = Position;
             Position += new Vector2(velocity.X, 0);

@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\HUDFont.xnb</Output>
-      <Time>2012-04-23T21:52:38.579245-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\HUDFont.xnb</Output>
+      <Time>2012-05-02T17:19:37.0156432-04:00</Time>
     </Item>
     <Item>
       <Source>objects\ground.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\ground.xnb</Output>
-      <Time>2012-04-23T21:52:38.5892451-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\ground.xnb</Output>
+      <Time>2012-05-02T17:19:37.047645-04:00</Time>
     </Item>
     <Item>
       <Source>objects\block.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\block.xnb</Output>
-      <Time>2012-04-23T21:52:38.5892451-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\block.xnb</Output>
+      <Time>2012-05-02T17:19:37.0456449-04:00</Time>
     </Item>
     <Item>
       <Source>bg.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\bg.xnb</Output>
-      <Time>2012-04-23T21:52:38.579245-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\bg.xnb</Output>
+      <Time>2012-05-02T17:19:37.0186434-04:00</Time>
     </Item>
     <Item>
       <Source>objects\borderblock.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\borderblock.xnb</Output>
-      <Time>2012-04-23T21:52:38.5892451-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\borderblock.xnb</Output>
+      <Time>2012-05-02T17:19:37.046645-04:00</Time>
     </Item>
     <Item>
       <Source>chars\enemy.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\chars\enemy.xnb</Output>
-      <Time>2012-04-23T21:52:38.579245-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\enemy.xnb</Output>
+      <Time>2012-05-02T17:19:37.0206435-04:00</Time>
     </Item>
     <Item>
       <Source>chars\player.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\chars\player.xnb</Output>
-      <Time>2012-04-23T21:52:38.579245-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\player.xnb</Output>
+      <Time>2012-05-02T17:19:37.0216435-04:00</Time>
     </Item>
     <Item>
       <Source>titleplaceholder.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\titleplaceholder.xnb</Output>
-      <Time>2012-04-23T21:52:38.5892451-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\titleplaceholder.xnb</Output>
+      <Time>2012-05-02T17:19:37.0486451-04:00</Time>
     </Item>
     <Item>
       <Source>menubg.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\menubg.xnb</Output>
-      <Time>2012-04-23T21:52:38.579245-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\menubg.xnb</Output>
+      <Time>2012-05-02T17:19:37.0236437-04:00</Time>
     </Item>
     <Item>
       <Source>objects\itembox.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\itembox.xnb</Output>
-      <Time>2012-04-23T21:52:38.5892451-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\itembox.xnb</Output>
+      <Time>2012-05-02T17:19:37.0486451-04:00</Time>
     </Item>
     <Item>
       <Source>objects\item.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\objects\item.xnb</Output>
-      <Time>2012-04-23T21:52:38.5892451-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\item.xnb</Output>
+      <Time>2012-05-02T17:19:37.047645-04:00</Time>
     </Item>
     <Item>
       <Source>chars\playerbig.png</Source>
@@ -106,8 +106,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\chars\playerbig.xnb</Output>
-      <Time>2012-04-23T21:52:38.579245-07:00</Time>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\playerbig.xnb</Output>
+      <Time>2012-05-02T17:19:37.0216435-04:00</Time>
+    </Item>
+    <Item>
+      <Source>chars\framanimationtest.png</Source>
+      <Name>chars\framanimationtest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\framanimationtest.xnb</Output>
+      <Time>2012-05-02T17:19:37.0206435-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -115,39 +124,39 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\TestingContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\TestingContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Steven\Desktop\Practice\Testing\TestingContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Steven\Desktop\Practice\Testing\Testing\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Steven\Desktop\Practice\Testing\TestingContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-04-08T17:25:08.1058963-07:00</Value>
+        <Value>2012-04-11T18:09:44.593592-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

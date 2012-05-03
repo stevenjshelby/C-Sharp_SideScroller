@@ -73,11 +73,16 @@ namespace Testing
             velocity.Y = 0;
         }
 
-        public virtual void Die()
+        public virtual void Die(bool force)
         {
             alive = false;
             velocity = Vector2.Zero;
             Position = new Vector2(0, 0);
+        }
+
+        public virtual void Die()
+        {
+            Die(false);
         }
 
         public override GameObject IntersectsWithAny(List<GameObject> gameObjects)
@@ -122,7 +127,7 @@ namespace Testing
             if (Position.Y > Game1.ScreenHeight)
             {
                 //below visible screen
-                Die();
+                Die(true);
             }
 
             base.Update(currentLevel, gameTime);

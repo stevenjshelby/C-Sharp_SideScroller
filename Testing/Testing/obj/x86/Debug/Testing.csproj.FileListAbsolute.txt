@@ -58,3 +58,4 @@ C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\o
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\Testing.exe
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\Testing.pdb
+C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\framanimationtest.xnb

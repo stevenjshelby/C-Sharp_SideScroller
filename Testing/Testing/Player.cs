@@ -17,6 +17,7 @@ namespace Testing
     {
         private bool canJump = true;
         public int score = 0;
+        public string name = "Steven";
         public bool hurt = false;
 
         public int hurtTimer = 0;
@@ -92,9 +93,9 @@ namespace Testing
             return false;
         }
 
-        public override void Die()
+        public override void Die(bool force)
         {
-            if (status == Status.Small && !hurt)
+            if ((status == Status.Small && !hurt) || force)
             {
                 alive = false;
                 velocity = Vector2.Zero;

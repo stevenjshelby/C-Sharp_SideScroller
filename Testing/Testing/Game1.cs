@@ -52,8 +52,8 @@ namespace Testing
         public string statusText;
         public Vector2 statusPos;
 
-        public string playerName = "";
-        public Dictionary<string, int> highScores = new Dictionary<string, int>();
+        private Dictionary<string, int> highScores = new Dictionary<string, int>();
+        private string highScoreFileName = "C:\\Users\\Steven\\Desktop\\Practice\\Testing\\Testing\\HighScores\\highscores.txt";
 
         private Texture2D MenuArt;
         private Texture2D MenuBG;
@@ -175,6 +175,8 @@ namespace Testing
             //initialize camera to screen size
             camera = new Camera(0,0,screenWidth, screenHeight-HUD.Height);
 
+            loadHighScores();
+
             base.Initialize();
         }
 
@@ -216,16 +218,24 @@ namespace Testing
 
         protected void updateHighScores()
         {
-            loadHighScores();
-            // load high scores
+            KeyValuePair<string, int> lowScore = new KeyValuePair<string,int>("",-1);
             foreach (KeyValuePair<string, int> pair in highScores)
             {
-                if (player.score > pair.Value)
+                if (lowScore.Value == -1)
+                    lowScore = new KeyValuePair<string,int>(player.name, player.score);
+
+                if (lowScore.Value > pair.Value)
                 {
                     //prompt for player name
-                    highScores.Add(playerName, player.score);
+                    if (highScores.ContainsKey(lowScore.Key))
+                        highScores.Remove(lowScore.Key);
+                    highScores.Add(lowScore.Key, lowScore.Value);
+                    lowScore = pair;
                     break;
                 }
+
+                if (highScores.Count() > 10)
+                    highScores.Remove(lowScore.Key);
             }
             // save high scores here
             saveHighScores();
@@ -233,28 +243,33 @@ namespace Testing
 
         protected void loadHighScores()
         {
-            //string filename = "highscores";
-            //using (var sr = new StreamReader(filename))
-            //{
-            //    while (!sr.EndOfStream)
-            //    {
-            //        //reads a line
-            //        string line = sr.ReadLine();
-            //        if (line != null && (line.StartsWith("//") || line == ""))
-            //            continue;
-            //        if (line != null)
-            //        {
-            //            //load in lines
-            //            string[] split = line.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-            //            //
-            //        }
-            //    }
-            //}
+            using (var sr = new StreamReader(highScoreFileName))
+            {
+                while (!sr.EndOfStream)
+                {
+                    //reads a line
+                    string line = sr.ReadLine();
+                    if (line != null && (line.StartsWith("//") || line == ""))
+                        continue;
+                    if (line != null)
+                    {
+                        //load in lines
+                        string[] split = line.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                        highScores.Add(split[0].ToString(), Convert.ToInt32(split[1]));
+                    }
+                }
+            }
         }
 
         protected void saveHighScores()
         {
-
+            using (var sw = new StreamWriter(highScoreFileName))
+            {
+                foreach (KeyValuePair<string, int> pair in highScores)
+                {
+                    sw.WriteLine(pair.Key+", "+pair.Value);
+                }
+            }
         }
 
         private KeyboardState oldKeyboardState = Keyboard.GetState();

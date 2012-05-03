@@ -138,7 +138,8 @@ namespace Testing
                         }
                         else if (split[2] == "itembox")
                         {
-                            Texture2D sprite = Content.Load<Texture2D>("objects/itembox");
+                            Texture2D sprite1 = Content.Load<Texture2D>("objects/itembox");
+                            Texture2D sprite2 = Content.Load<Texture2D>("objects/itembox_hit");
                             Item newItem = new Item(new Vector2(float.Parse(split[4]),
                                                                             float.Parse(split[5])),
                                                                 ItemTextures[int.Parse(split[3])],
@@ -147,7 +148,8 @@ namespace Testing
                             ItemBox itemBoxObj = new ItemBox(new Vector2(float.Parse(split[0]),
                                                                          float.Parse(split[1])),
                                                              Vector2.Zero,
-                                                             sprite,
+                                                             sprite1,
+                                                             sprite2,
                                                              GameObject.ObjectType.ItemBox,
                                                              newItem);
                             level.GameObjects.Add(itemBoxObj);
@@ -198,8 +200,8 @@ namespace Testing
             MenuArt = Content.Load<Texture2D>("titleplaceholder");
             MenuBG = Content.Load<Texture2D>("menubg");
 
-            ItemTextures[0] = Content.Load<Texture2D>("objects/item");
-            ItemTextures[1] = Content.Load<Texture2D>("objects/item");
+            ItemTextures[0] = Content.Load<Texture2D>("objects/mushroom");
+            ItemTextures[1] = Content.Load<Texture2D>("objects/star");
 
             availableLevels = FindAvailableLevels();
             NextLevel();

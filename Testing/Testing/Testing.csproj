@@ -110,7 +110,6 @@
   <ItemGroup>
     <Compile Include="Camera.cs" />
     <Compile Include="Enemy.cs" />
-    <Compile Include="FrameAnimation.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemBox.cs" />
     <Compile Include="Level.cs" />
@@ -126,9 +125,6 @@
     <Content Include="GameThumbnail.png" />
     <Content Include="HighScores\highscores.txt" />
     <Content Include="Levels\level01.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Levels\level02.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -19,17 +19,21 @@ namespace Testing
 
         private GameObject item;
 
+        Texture2D spriteTexHit;
+
         //Constructor
-        public ItemBox(Vector2 pos, Vector2 vel, Texture2D spritetex, ObjectType objType, GameObject I)
-                : base(pos, vel, spritetex, ObjectType.ItemBox)
+        public ItemBox(Vector2 pos, Vector2 vel, Texture2D spritetex1, Texture2D spritetex2, ObjectType objType, GameObject I)
+                : base(pos, vel, spritetex1, ObjectType.ItemBox)
         {
             item = I;
+            spriteTexHit = spritetex2;
         }
 
         public void Hit()
         {
             hit = true;
             item.alive = true;
+            sprite = spriteTexHit;
         }
     }
 }

@@ -20,9 +20,9 @@ namespace Testing
         public string name = "Steven";
         public bool hurt = false;
 
+        //Timers
         public int hurtTimer = 0;
         public const int hurtTime = 60;
-
         public int invincibleTimer = 0;
         public const int invincibleTime = 520;
 

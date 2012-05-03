@@ -110,22 +110,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="objects\item.png">
-      <Name>item</Name>
+    <Compile Include="objects\mushroom.png">
+      <Name>mushroom</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="chars\playerbig.png">
-      <Name>playerbig</Name>
+    <Compile Include="objects\itembox_hit.png">
+      <Name>itembox_hit</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="chars\framanimationtest.png">
-      <Name>framanimationtest</Name>
+    <Compile Include="objects\star.png">
+      <Name>star</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

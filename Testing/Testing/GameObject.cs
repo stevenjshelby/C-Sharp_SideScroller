@@ -13,39 +13,6 @@ namespace Testing
     /// </summary>
     class GameObject
     {
-        //variables for changing the sprites animations
-        public Dictionary<string, FrameAnimation> Animations = new Dictionary<string, FrameAnimation>();
-        protected string currentAnimation = null;
-        protected bool animating = true;
-
-        public bool IsAnimating
-        {
-            get { return animating; }
-            set { animating = value; }
-        }
-
-        public FrameAnimation CurrentAnimation
-        {
-            get
-            {
-                if (!string.IsNullOrEmpty(currentAnimation))
-                    return Animations[currentAnimation];
-                else return null;
-            }
-        }
-
-        
-        public string CurrentAnimationName
-        {
-            get { return currentAnimation;  }
-            set
-            {
-                if (Animations.ContainsKey(value))
-                    currentAnimation = value;
-            }
-        }
-
-
         public enum ObjectType
         {
             Player, //Player Class
@@ -84,8 +51,6 @@ namespace Testing
             get { return sprite.Height; }
         }
 
-        FrameAnimation an;
-
         //Constructor
         public GameObject(Vector2 pos, Vector2 vel, Texture2D spritetex, ObjectType objType)
         {
@@ -94,12 +59,6 @@ namespace Testing
             sprite = spritetex;
             Type = objType;
             SpriteBounds = new Rectangle((int)position.X, (int)position.Y, sprite.Width, sprite.Height);
-
-            an = new FrameAnimation(1, 32, 32, 0, 0);
-            an.FramesPerSecond = 4;
-            Animations.Add("animation1", an);
-
-            CurrentAnimationName = "animation1";
         }
 
         public bool Collision(GameObject o)
@@ -160,44 +119,14 @@ namespace Testing
 
         public virtual void Update(Level currentLevel, GameTime gameTime)
         {
-            //this is for updating the animations,
-            //the rest of the update code is within 
-            //sub-classes
-            if (!IsAnimating)
-                return;
 
-            FrameAnimation animation = CurrentAnimation;
-
-            if (animation == null)
-            {
-                if (Animations.Count > 0)
-                {
-                    string[] keys = new string[Animations.Count];
-                    Animations.Keys.CopyTo(keys, 0);
-
-                    currentAnimation = keys[0];
-
-                    animation = CurrentAnimation;
-                }
-                else
-                    return;
-            }
-
-            animation.Update(gameTime);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch, Vector2 actualPos)
         {
-            FrameAnimation animation = CurrentAnimation;
-
-            if (animation != null)
-            {
-                spriteBatch.Draw(sprite,
-                                 actualPos,
-                                 animation.CurrentRect,
-                                 Color.White);
-
-            }
+            spriteBatch.Draw(sprite,
+                             actualPos,
+                             Color.White);
         }
 
     }

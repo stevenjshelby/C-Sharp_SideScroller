@@ -22,7 +22,6 @@ C:\Users\Steven\Desktop\Practice\Testing\Testing\obj\x86\Debug\ResolveAssemblyRe
 C:\Users\Steven\Desktop\Practice\Testing\Testing\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Steven\Desktop\Practice\Testing\Testing\obj\x86\Debug\Testing.exe
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Levels\level01.txt
-C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Levels\level02.txt
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\HUDFont.xnb
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\ground.xnb
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\block.xnb
@@ -33,8 +32,6 @@ C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\pla
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\titleplaceholder.xnb
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\menubg.xnb
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\itembox.xnb
-C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\item.xnb
-C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\playerbig.xnb
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Testing.exe
 C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Testing.pdb
 C:\Users\Steven\Desktop\Practice\Testing\Testing\obj\x86\Debug\Testing.pdb
@@ -58,4 +55,6 @@ C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\o
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\Testing.exe
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\Testing\obj\x86\Debug\Testing.pdb
-C:\Users\Steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\framanimationtest.xnb
+C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\mushroom.xnb
+C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\itembox_hit.xnb
+C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\star.xnb

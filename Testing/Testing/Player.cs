@@ -17,8 +17,8 @@ namespace Testing
     {
         private bool canJump = true;
         public int score = 0;
-        public string name = "Steven";
-        public bool hurt = false;
+        public string name = "Steven"; //plan to add feature to get name input from player
+        public bool hurt = false; //used so a player can get hurt and not die right away when 'big'
 
         //Timers
         public int hurtTimer = 0;
@@ -28,9 +28,9 @@ namespace Testing
 
         public enum Status
         {
-            Small,
-            Big,
-            Invincible
+            Small, //one hit kills you
+            Big, //one hit sets you small
+            Invincible //KILL ALL THE ENEMIES!
         }
         public Status status;
         private Status previousStatus; //used for invincibility
@@ -42,7 +42,8 @@ namespace Testing
             status = Status.Small;
             previousStatus = status;
         }
-
+        
+        //called when player presses the jump key
         public void Jump()
         {
             if (alive && canJump)
@@ -52,14 +53,16 @@ namespace Testing
             }
         }
 
+        //when player reaches the bottom we are allowed to jump again.
         public override void ReachedBottom()
         {
-            base.ReachedBottom();
             canJump = true;
+            base.ReachedBottom();
         }
 
         public override void DetectEnemyHit(MovingObject mob)
         {
+            //if invincible then it doesn't matter so return
             if (status == Status.Invincible)
                 return;
 
@@ -86,6 +89,7 @@ namespace Testing
             base.Move(dir, 1.0f);
         }
 
+        //checks if the player is at the designated finish position
         public bool LevelComplete(Level currentLevel)
         {
             if (SpriteBounds.Intersects(currentLevel.FinishZone))
@@ -93,6 +97,9 @@ namespace Testing
             return false;
         }
 
+        //the player die method needs to take into account the 
+        //player's status. if status == small or the force value is true,
+        //then player dies. if the player is big then set them to small
         public override void Die(bool force)
         {
             if ((status == Status.Small && !hurt) || force)
@@ -108,6 +115,7 @@ namespace Testing
             }
         }
 
+        //Main update method
         public override void Update(Level currentLevel, GameTime gameTime)
         {
             if (!alive)

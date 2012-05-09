@@ -28,9 +28,12 @@ namespace Testing
         public MovingObject(Vector2 pos, Vector2 vel, Texture2D spritetex, ObjectType objType)
                 : base(pos, vel, spritetex, objType)
         {
-            
+            //uses same constructor as base class.
+            //no need for additional assignments.
         }
 
+        //set the objects velocity in the horizontal axis
+        //ApplyGravity() will take care of the vertical movement
         public virtual void Move(Direction dir, float speed)
         {
             if (alive)
@@ -44,8 +47,12 @@ namespace Testing
 
         public virtual void HitWall()
         {
+            //do nothing here
+            //used for enemy class
         }
 
+        //add gravity to the velocity vector then check for
+        //collision and move the piece in the vertical axis
         public void ApplyGravity(Level level)
         {
             if (alive)
@@ -68,11 +75,14 @@ namespace Testing
             }
         }
 
+        //called when the moving object reaches the ground
         public virtual void ReachedBottom()
         {
             velocity.Y = 0;
         }
 
+        //called when the object is killed
+        //a force option is used in some child classes
         public virtual void Die(bool force)
         {
             alive = false;
@@ -80,13 +90,16 @@ namespace Testing
             Position = new Vector2(0, 0);
         }
 
+        //called when the object is killed
         public virtual void Die()
         {
             Die(false);
         }
 
+        //returns a list of objects that this object is currently colliding with
         public override GameObject IntersectsWithAny(List<GameObject> gameObjects)
-        {
+        {   
+            //if not alive then it doesn't matter
             if (!alive)
                 return null;
 
@@ -120,6 +133,7 @@ namespace Testing
         {
         }
 
+        //Main update method
         public override void Update(Level currentLevel, GameTime gameTime)
         {
             ApplyGravity(currentLevel);

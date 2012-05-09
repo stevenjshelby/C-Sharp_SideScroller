@@ -21,9 +21,11 @@ namespace Testing
         public Enemy(Vector2 position, Vector2 velocity, Texture2D sprite)
             : base(position, velocity, sprite, ObjectType.Enemy)
         {
+            //added a spawn location since the enemies are not human controlled
             SpawnLocation = new Point((int)position.X, (int)position.Y);
         }
 
+        //Main update method
         public override void Update(Level currentLevel, GameTime gameTime)
         {
             if (!alive)
@@ -45,11 +47,15 @@ namespace Testing
             base.Update(currentLevel, gameTime);
         }
 
+        //the enemy turns around when it collides with something
         public override void HitWall()
         {
             MovementDirection = MovementDirection == Direction.Left ? Direction.Right : Direction.Left;
         }
 
+        //if the enemy detects a valid kill hit by a player or if the player it is 
+        //intersecting with is invincible then it kills itself and adds one to 
+        //the players score
         public override void DetectEnemyHit(MovingObject mob)
         {
             //dont kill friends

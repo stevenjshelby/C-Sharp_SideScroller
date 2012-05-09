@@ -21,12 +21,12 @@ namespace Testing
             ItemBox, //ItemBox Class
             Item //Item Class
         }
+        public ObjectType Type; 
 
-        private Vector2 position;
+        private Vector2 position; //(x,y) position of the player
         public Vector2 velocity;
         public Texture2D sprite;
-        public Rectangle SpriteBounds;
-        public ObjectType Type;
+        public Rectangle SpriteBounds; //bounds of the sprite as a rectangle object
         public bool alive = true;
         public bool solid = true;
 
@@ -61,6 +61,8 @@ namespace Testing
             SpriteBounds = new Rectangle((int)position.X, (int)position.Y, sprite.Width, sprite.Height);
         }
 
+        //First checks collision based on the rects intersectin, then calls the pixelsIntersect
+        //method to check if actually a collision
         public bool Collision(GameObject o)
         {
             if (SpriteBounds.Intersects(o.SpriteBounds) && o.alive)
@@ -74,7 +76,8 @@ namespace Testing
             return false;
         }
 
-        //IntersectPixels method taken directly from the XNA 2D per pixel collision check. Doesn't need to be changed as far as I can see. 
+        //IntersectPixels method taken directly from the XNA 2D per pixel collision check. 
+        //Doesn't need to be changed as far as I can see.
         private bool PixelsIntersect(Rectangle rectangleA, Color[] dataA, Rectangle rectangleB, Color[] dataB)
         {
             int top = Math.Max(rectangleA.Top, rectangleB.Top);
@@ -107,6 +110,8 @@ namespace Testing
             return colors1D;
         }
 
+        //Checks for collision with any other object in the game and returns
+        //a list of all of those objects
         public virtual GameObject IntersectsWithAny(List<GameObject> gameObjects)
         {
             foreach (GameObject o in gameObjects)
@@ -117,11 +122,16 @@ namespace Testing
             return null;
         }
 
+        //To be overriden by child classes
         public virtual void Update(Level currentLevel, GameTime gameTime)
         {
 
         }
 
+        //Most classes will probably override this
+        //Takes in a sprite batch and uses it to draw the sprite at the provided 
+        //location. Does not use the objects position variable as that is relative
+        //to the map. Need to draw relative to the camera position
         public virtual void Draw(SpriteBatch spriteBatch, Vector2 actualPos)
         {
             spriteBatch.Draw(sprite,

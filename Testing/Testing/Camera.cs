@@ -5,15 +5,15 @@ namespace Testing
 {
     class Camera
     {
-        //Variables
         private enum CameraMode
         {
             Free,
             Locked
         }
-        private Viewport viewport;
-        private GameObject focusObject;
         private CameraMode mode;
+
+        private Viewport viewport;
+        private GameObject focusObject; //what object the camera is following
         private Rectangle boundingRect;
 
         public bool LockToPlayingArea = true;
@@ -25,20 +25,23 @@ namespace Testing
             boundingRect = new Rectangle(x, y, width, height);
         }
 
-        //Methods
         public Vector2 Position
         {
             get { return new Vector2(viewport.X, viewport.Y); }
         }
 
+        //set the camera to a game object
         public void LockToObject(GameObject gameObject)
         {
             focusObject = gameObject;
             mode = CameraMode.Locked;
         }
+    
 
         public void Update()
         {
+            //if the camera mode is locked to something then position the
+            //camera so the object it is following is centered horizontally on screen
             if (mode == CameraMode.Locked)
             {
                 if (viewport.Bounds.Center != focusObject.SpriteBounds.Center)
@@ -47,6 +50,8 @@ namespace Testing
                     boundingRect.X = viewport.X;
                 }
             }
+            //prevents the camera from going off the map when the player
+            //is at the beginning or end of the map
             if (LockToPlayingArea && viewport.X < 0)
             {
                 viewport.X = 0;

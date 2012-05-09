@@ -18,6 +18,7 @@ namespace Testing
         public int ItemIndex;
         //0 = supersize
         //1 = invincible
+        //will add more power ups in the future
 
         //Constructor
         public Item(Vector2 pos, Texture2D spritetex, int index)

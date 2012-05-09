@@ -8,7 +8,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\HUDFont.xnb</Output>
-      <Time>2012-05-02T22:26:23.5139856-07:00</Time>
+      <Time>2012-05-08T16:12:38.5529141-04:00</Time>
     </Item>
     <Item>
       <Source>objects\ground.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\ground.xnb</Output>
-      <Time>2012-05-02T23:07:05.9696828-07:00</Time>
+      <Time>2012-05-08T16:12:38.5609146-04:00</Time>
     </Item>
     <Item>
       <Source>objects\block.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\block.xnb</Output>
-      <Time>2012-05-02T23:21:05.8741934-07:00</Time>
+      <Time>2012-05-08T16:12:38.5599145-04:00</Time>
     </Item>
     <Item>
       <Source>bg.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\bg.xnb</Output>
-      <Time>2012-05-02T22:26:23.5139856-07:00</Time>
+      <Time>2012-05-08T16:12:38.5539142-04:00</Time>
     </Item>
     <Item>
       <Source>objects\borderblock.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\borderblock.xnb</Output>
-      <Time>2012-05-02T22:26:23.5239856-07:00</Time>
+      <Time>2012-05-08T16:12:38.5609146-04:00</Time>
     </Item>
     <Item>
       <Source>chars\enemy.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\enemy.xnb</Output>
-      <Time>2012-05-02T22:26:23.5139856-07:00</Time>
+      <Time>2012-05-08T16:12:38.5549142-04:00</Time>
     </Item>
     <Item>
       <Source>chars\player.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\player.xnb</Output>
-      <Time>2012-05-02T22:26:23.5139856-07:00</Time>
+      <Time>2012-05-08T16:12:38.5559143-04:00</Time>
     </Item>
     <Item>
       <Source>titleplaceholder.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\titleplaceholder.xnb</Output>
-      <Time>2012-05-02T22:26:23.5239856-07:00</Time>
+      <Time>2012-05-08T16:12:38.5919163-04:00</Time>
     </Item>
     <Item>
       <Source>menubg.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\menubg.xnb</Output>
-      <Time>2012-05-02T22:26:23.5139856-07:00</Time>
+      <Time>2012-05-08T16:12:38.5569143-04:00</Time>
     </Item>
     <Item>
       <Source>objects\itembox.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\itembox.xnb</Output>
-      <Time>2012-05-02T22:26:23.5239856-07:00</Time>
+      <Time>2012-05-08T16:12:38.5769155-04:00</Time>
     </Item>
     <Item>
       <Source>objects\mushroom.png</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\mushroom.xnb</Output>
-      <Time>2012-05-02T22:26:23.5239856-07:00</Time>
+      <Time>2012-05-08T16:12:38.5909163-04:00</Time>
     </Item>
     <Item>
       <Source>objects\itembox_hit.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\itembox_hit.xnb</Output>
-      <Time>2012-05-02T23:09:14.9469106-07:00</Time>
+      <Time>2012-05-08T16:12:38.5899162-04:00</Time>
     </Item>
     <Item>
       <Source>objects\star.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\star.xnb</Output>
-      <Time>2012-05-02T23:14:00.2393192-07:00</Time>
+      <Time>2012-05-08T16:12:38.5909163-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -132,31 +132,31 @@
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-04-08T17:25:08.1058963-07:00</Value>
+        <Value>2012-04-08T20:25:08.1058963-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

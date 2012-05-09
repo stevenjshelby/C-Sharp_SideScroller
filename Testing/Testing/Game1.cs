@@ -22,12 +22,16 @@ namespace Testing
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        //the sprites will be 32x32
+        //textures
         private Texture2D backgroundTexture;
         private Texture2D playerTexture;
         private Texture2D enemyTexture;
         private Texture2D[] ItemTextures = new Texture2D[2];
         private SpriteFont spriteFont;
+        private Texture2D MenuArt;
+        private Texture2D MenuBG;
+
+        //some game variabbles
         private Level currentLevel;
         private Player player;
         private Camera camera;
@@ -35,6 +39,7 @@ namespace Testing
         private List<string> availableLevels = new List<string>();
         private int currentLevelIndex = -1;
 
+        //screen variables
         //the screen will be 27 tiles wide and 15 tiles high
         private static int screenWidth = 864;
         private static int screenHeight = 600;
@@ -43,20 +48,22 @@ namespace Testing
         public static int ScreenHeight { get { return screenHeight; } }
         public static Rectangle HUDRect { get { return HUD;} }
 
+        //For now all of the HUD elements are created, assigned, and drawn within this class.
+        //Will hopefully implement a HUD class at some point and make it look nice and not just
+        //white text on a black background
         public string infoText;
         public Vector2 infoPosition = new Vector2(0, 0);
-
         public string scoreText;
         public Vector2 scorePos;
-
         public string statusText;
         public Vector2 statusPos;
 
+        //high score variables
         private Dictionary<string, int> highScores = new Dictionary<string, int>();
         private string highScoreFileName = "C:\\Users\\Steven\\Desktop\\Practice\\Testing\\Testing\\HighScores\\highscores.txt";
 
-        private Texture2D MenuArt;
-        private Texture2D MenuBG;
+        //The state of the game. Used throughout the program to allow all of the seperate
+        //pieces of the program know what they should be doing right now
         public enum GameState
         {
             Menu,
@@ -67,9 +74,12 @@ namespace Testing
             Credits
         }
         public GameState gameState;
+
+        //timers
         private int loadTimer = 0;
         private const int loadTime = 80;
         
+        //Constructor
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -83,6 +93,7 @@ namespace Testing
             Content.RootDirectory = "Content";
         }
 
+        //checks for text files in the Levels\ directory
         public List<string> FindAvailableLevels()
         {
             List<string> levels = new List<string>();
@@ -94,6 +105,7 @@ namespace Testing
             return levels;
         }
 
+        //increments level index and checks if there is another level then calls LoadLevel
         public void NextLevel()
         {
             currentLevelIndex++;
@@ -106,6 +118,21 @@ namespace Testing
             LoadLevel(availableLevels[currentLevelIndex]);
         }
 
+        //sets the currentLevel varaible to the returned value of the loadLevelFromFile method then
+        //creates the player and adds it to the game objects list
+        private void LoadLevel(string levelname)
+        {
+            currentLevel = LoadLevelFromFile(levelname);
+
+            currentLevel.Name = levelname;
+
+            player = new Player(currentLevel.StartPosition, new Vector2(0, 0), playerTexture);
+            currentLevel.GameObjects.Add(player);
+            camera.LockToObject(player);
+        }
+
+        //parse the .txt file and create a new Level object that contains all of the objects and positions
+        //of the new level. returns the new Level object.
         internal Level LoadLevelFromFile(string filename)
         {
             var level = new Level();
@@ -167,9 +194,6 @@ namespace Testing
                 }
             }
             return level;
-            //first line = X
-            //second line = Y
-            //third line = spritename
         }
 
         protected override void Initialize()
@@ -207,17 +231,12 @@ namespace Testing
             NextLevel();
         }
 
-        private void LoadLevel(string levelname)
-        {
-            currentLevel = LoadLevelFromFile(levelname);
-
-            currentLevel.Name = levelname;
-
-            player = new Player(currentLevel.StartPosition, new Vector2(0, 0), playerTexture);
-            currentLevel.GameObjects.Add(player);
-            camera.LockToObject(player);
-        }
-
+        //The High Scores sections is minimally implemented and needs great improvement.
+        //Might fix it up at some point in the future but really don't need it as this is clearly
+        //not much of a functioning game
+        /////////////////////////////////////////////////////////////////////////////////////////
+        //checks if the players current score is a high score then adds it to the keyValuePair
+        //and removes the lowest score
         protected void updateHighScores()
         {
             KeyValuePair<string, int> lowScore = new KeyValuePair<string,int>("",-1);
@@ -243,6 +262,8 @@ namespace Testing
             saveHighScores();
         }
 
+        //loads the highscores from a text file and parses that file to create a 
+        //keyValuePair of the high scores mapped to names
         protected void loadHighScores()
         {
             using (var sr = new StreamReader(highScoreFileName))
@@ -263,6 +284,7 @@ namespace Testing
             }
         }
 
+        //saves the new highscores keyValuePair to the highscores text file
         protected void saveHighScores()
         {
             using (var sw = new StreamWriter(highScoreFileName))
@@ -274,8 +296,8 @@ namespace Testing
             }
         }
 
-        private KeyboardState oldKeyboardState = Keyboard.GetState();
-
+        private KeyboardState oldKeyboardState = Keyboard.GetState(); //needed in the update method to prevent player from holding certain keys down
+        //Main update method
         protected override void Update(GameTime gameTime)
         {
             KeyboardState keyboard = Keyboard.GetState();
@@ -367,6 +389,7 @@ namespace Testing
             base.Update(gameTime);
         }
 
+        //Games main draw method
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -436,7 +459,7 @@ namespace Testing
             
             base.Draw(gameTime);
         }
-
+        
         //update HUD info
         protected void UpdateHUD()
         {
@@ -465,6 +488,7 @@ namespace Testing
             spriteBatch.End();
         }
 
+        //Draws the pre-level splash screen you see as well as the pause menu
         private void DrawLevelSplash()
         {
             spriteBatch.Begin();

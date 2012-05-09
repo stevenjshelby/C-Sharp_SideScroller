@@ -15,20 +15,27 @@ namespace Testing
 {
     class ItemBox : GameObject
     {
-        public bool hit = false;
+        public bool hit = false; //has the itembox been smashed already?
 
-        private GameObject item;
+        private GameObject item; //what type of item is this?
+            //Player
+            //Enemy
+            //Block
+            //ItemBox
+            //Item
 
-        Texture2D spriteTexHit;
+        Texture2D spriteTexHit; //the texture used once the box has been smashed
 
         //Constructor
         public ItemBox(Vector2 pos, Vector2 vel, Texture2D spritetex1, Texture2D spritetex2, ObjectType objType, GameObject I)
                 : base(pos, vel, spritetex1, ObjectType.ItemBox)
         {
-            item = I;
-            spriteTexHit = spritetex2;
+            item = I; //the item box is linked to an item
+            spriteTexHit = spritetex2; //load the hit texture
         }
 
+        //when the box it properly hit from below then set its linked
+        //item to alive and set smashed = true.
         public void Hit()
         {
             hit = true;

@@ -11,9 +11,9 @@ namespace Testing
     class Level
     {
         public string Name;
-        public List<GameObject> GameObjects;
-        public Vector2 StartPosition;
-        public Rectangle FinishZone;
+        public List<GameObject> GameObjects; //list of all of the objects on the map
+        public Vector2 StartPosition; //where the player starts
+        public Rectangle FinishZone; //where the player needs to get to to complete the level
         public bool Finished;
         public DateTime LevelFinishTime;
 

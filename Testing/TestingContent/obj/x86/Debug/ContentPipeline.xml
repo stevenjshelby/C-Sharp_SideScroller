@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\HUDFont.xnb</Output>
-      <Time>2012-05-08T16:12:38.5529141-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\HUDFont.xnb</Output>
+      <Time>2012-09-09T17:28:09.4177069-04:00</Time>
     </Item>
     <Item>
       <Source>objects\ground.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\ground.xnb</Output>
-      <Time>2012-05-08T16:12:38.5609146-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\objects\ground.xnb</Output>
+      <Time>2012-09-09T17:28:09.4247073-04:00</Time>
     </Item>
     <Item>
       <Source>objects\block.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\block.xnb</Output>
-      <Time>2012-05-08T16:12:38.5599145-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\objects\block.xnb</Output>
+      <Time>2012-09-09T17:28:09.4247073-04:00</Time>
     </Item>
     <Item>
       <Source>bg.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\bg.xnb</Output>
-      <Time>2012-05-08T16:12:38.5539142-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\bg.xnb</Output>
+      <Time>2012-09-09T17:28:09.4187069-04:00</Time>
     </Item>
     <Item>
       <Source>objects\borderblock.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\borderblock.xnb</Output>
-      <Time>2012-05-08T16:12:38.5609146-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\objects\borderblock.xnb</Output>
+      <Time>2012-09-09T17:28:09.4247073-04:00</Time>
     </Item>
     <Item>
       <Source>chars\enemy.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\enemy.xnb</Output>
-      <Time>2012-05-08T16:12:38.5549142-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\chars\enemy.xnb</Output>
+      <Time>2012-09-09T17:28:09.419707-04:00</Time>
     </Item>
     <Item>
       <Source>chars\player.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\chars\player.xnb</Output>
-      <Time>2012-05-08T16:12:38.5559143-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\chars\player.xnb</Output>
+      <Time>2012-09-09T17:28:09.4207071-04:00</Time>
     </Item>
     <Item>
       <Source>titleplaceholder.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\titleplaceholder.xnb</Output>
-      <Time>2012-05-08T16:12:38.5919163-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\titleplaceholder.xnb</Output>
+      <Time>2012-09-09T17:28:09.4267074-04:00</Time>
     </Item>
     <Item>
       <Source>menubg.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\menubg.xnb</Output>
-      <Time>2012-05-08T16:12:38.5569143-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\menubg.xnb</Output>
+      <Time>2012-09-09T17:28:09.4217071-04:00</Time>
     </Item>
     <Item>
       <Source>objects\itembox.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\itembox.xnb</Output>
-      <Time>2012-05-08T16:12:38.5769155-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\objects\itembox.xnb</Output>
+      <Time>2012-09-09T17:28:09.4257073-04:00</Time>
     </Item>
     <Item>
       <Source>objects\mushroom.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\mushroom.xnb</Output>
-      <Time>2012-05-08T16:12:38.5909163-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\objects\mushroom.xnb</Output>
+      <Time>2012-09-09T17:28:09.4267074-04:00</Time>
     </Item>
     <Item>
       <Source>objects\itembox_hit.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\itembox_hit.xnb</Output>
-      <Time>2012-05-08T16:12:38.5899162-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\objects\itembox_hit.xnb</Output>
+      <Time>2012-09-09T17:28:09.4257073-04:00</Time>
     </Item>
     <Item>
       <Source>objects\star.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\objects\star.xnb</Output>
-      <Time>2012-05-08T16:12:38.5909163-04:00</Time>
+      <Output>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\objects\star.xnb</Output>
+      <Time>2012-09-09T17:28:09.4267074-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -124,10 +124,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\steven\Desktop\Practice\Testing\TestingContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\steven\Desktop\Practice\Testing\Testing\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\steven\Desktop\Practice\Testing\TestingContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\steven\Desktop\Practice\Testing\Testing\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\TestingContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\TestingContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\Testing\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

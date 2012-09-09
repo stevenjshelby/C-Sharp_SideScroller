@@ -2,3 +2,4 @@ C:\Users\steven\Documents\Visual Studio 2010\Projects\Testing\Testing\TestingCon
 C:\Users\Joe\code\Practice\Testing\TestingContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Steven\Desktop\Practice\Testing\TestingContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\steven\Documents\Visual Studio 2010\Projects\Practice\Testing\TestingContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\steven\Desktop\side_scroll\C-Sharp_SideScroller\Testing\TestingContent\obj\x86\Debug\ResolveAssemblyReference.cache

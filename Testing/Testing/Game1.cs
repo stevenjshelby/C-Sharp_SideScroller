@@ -60,7 +60,7 @@ namespace Testing
 
         //high score variables
         private Dictionary<string, int> highScores = new Dictionary<string, int>();
-        private string highScoreFileName = "C:\\Users\\Steven\\Desktop\\Practice\\Testing\\Testing\\HighScores\\highscores.txt";
+        private string highScoreFileName = "C:\\Users\\steven\\Desktop\\side_scroll\\C-Sharp_SideScroller\\Testing\\TestingContent\\highscores.txt";
 
         //The state of the game. Used throughout the program to allow all of the seperate
         //pieces of the program know what they should be doing right now
